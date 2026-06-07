@@ -1,0 +1,51 @@
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-hire,
+.btn-cv {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn-hire:hover,
+.btn-cv:hover {
+    background: #fff;
+    color: #000;
+}
+
+.btn-hire {
+    box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.hero {
+    position: relative;
+}
+
+.hero-logo {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    z-index: 100;
+}
+
+.hero-logo img {
+    width: 180px;   /* adjust as needed */
+    height: auto;
+}
+
+.hero-logo {
+    position: absolute;
+    top: 30px;
+    right: 200px;
+    z-index: 9999;
+}
