@@ -28,6 +28,8 @@
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/faq.css" rel="stylesheet">
   <link href="assets/css/Hero.css" rel="stylesheet">
+  <link href="assets/css/projects.css" rel="stylesheet">
+
 
 
 </head>
@@ -48,16 +50,27 @@
     </a>
 
     <div class="social-links text-center">
-      <!-- <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a> -->
-      <a href="https://www.facebook.com/rimenomis63/" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="https://www.instagram.com/rhymeeee___/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <!-- <a href="#" class="google-plus"><i class="bi bi-skype"></i></a> -->
-      <a href="https://www.linkedin.com/in/simon-llagas-7263b2176/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-    </div>
+  <a href="https://www.facebook.com/rimenomis63/" class="facebook">
+    <i class="bi bi-facebook"></i>
+  </a>
+
+  <a href="https://www.instagram.com/rhymeeee___/" class="instagram">
+    <i class="bi bi-instagram"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/in/simon-llagas-7263b2176/" class="linkedin">
+    <i class="bi bi-linkedin"></i>
+  </a>
+
+  <!-- Logo -->
+  <!-- <div class="sidebar-logo">
+    <img src="assets/img/EmDesignLogo.png" alt="EmDesign Logo">
+  </div> -->
+</div>
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#home" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
@@ -88,14 +101,15 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <section id="home" class="hero section dark-background">
 
   <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
 
-  <!-- Top Right Logo -->
-  <div class="hero-logo">
-    <img src="assets/img/EmDesignLogo.png" alt="EmDesign">
-  </div>
+ <div class="mobile-topbar">
+    
+
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+</div>
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <h2>Emir Llagas</h2>
@@ -120,6 +134,67 @@
   </div>
 
 </section>
+
+<!-- Commission Projects Section -->
+    <section id="commission-projects" class="section" style="padding: 40px 0; background: #040B14;">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <p style="font-size:13px; font-weight:600; color:#aaa; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px;">Commission Work</p>
+          <h2 style="color:#fff;">My Projects</h2>
+        </div>
+
+        <div class="row gy-4">
+
+          <!-- ── Card 1: Melissa's Portfolio ── -->
+          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <a href="https://sasadmd31.github.io/MelissaDelaCruz_DMD-Portfolio/index.html" target="_blank" class="commission-card">
+              <div class="commission-thumb" style="background:#2d2060; color:#a98df5;">
+                🦷
+                <span class="commission-badge">Commission</span>
+              </div>
+              <div class="commission-body">
+                <h4>Melissa Dela Cruz – DMD Portfolio</h4>
+                <p>A clean and modern personal portfolio website built for a client in the Dental Medicine Field.</p>
+                <div class="commission-footer">
+                  <div class="commission-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                  </div>
+                  <span class="commission-arrow">→</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- ── Card 2: BarHome Site ── -->
+          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <a href="BarHome.html" target="_blank" class="commission-card">
+              <div class="commission-thumb" style="background:#2d2060; color:#3ecfad;">
+                🍺
+                <span class="commission-badge" style="background:#0f6e56; color:#e1f5ee;">Commission</span>
+              </div>
+              <div class="commission-body">
+                <h4>BarHome Site</h4>
+                <p>A fully designed website for a bar and entertainment venue, featuring a menu, events, and contact sections.</p>
+                <div class="commission-footer">
+                  <div class="commission-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Bootstrap</span>
+                  </div>
+                  <span class="commission-arrow">→</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /Commission Projects Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -908,7 +983,7 @@ company achieve its goals</p>
               </div>
             </form> -->
 
-            <div class="faq-section">
+            <!-- <div class="faq-section"> -->
   <h2 class="faq-title">FAQ</h2>
 
   <div class="faq-item">
@@ -950,7 +1025,7 @@ company achieve its goals</p>
       <p>I'm currently accepting new projects. Feel free to reach out and we can discuss timelines that work for both of us.</p>
     </div>
   </div>
-</div>
+<!-- </div> -->
 
           </div><!-- End Contact Form -->
 
