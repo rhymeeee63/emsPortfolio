@@ -27,25 +27,3 @@
     box-shadow: 0 0 20px rgba(255,255,255,0.5);
 }
 
-.hero {
-    position: relative;
-}
-
-.hero-logo {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    z-index: 100;
-}
-
-.hero-logo img {
-    width: 180px;   /* adjust as needed */
-    height: auto;
-}
-
-.hero-logo {
-    position: absolute;
-    top: 30px;
-    right: 200px;
-    z-index: 9999;
-}
