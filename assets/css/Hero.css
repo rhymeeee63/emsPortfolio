@@ -54,3 +54,80 @@
   transition: opacity 0.15s; font-weight: 500;
 }
 .tool-icon:hover .tool-tooltip { opacity: 1; }
+
+.profile-reveal-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  display: inline-block;
+  width: 100%;
+}
+
+.profile-img {
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+  transition: transform 0.4s ease;
+}
+
+.profile-reveal-wrap:hover .profile-img {
+  transform: scale(1.04);
+}
+
+.profile-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: rgba(4, 11, 20, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.profile-reveal-wrap:hover .profile-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profile-overlay-name {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.profile-overlay-role {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.profile-overlay-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.profile-icon:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
