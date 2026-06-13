@@ -135,6 +135,26 @@
 
 </section>
 
+
+<!-- Tools Strip -->
+<div style="background: #040B14; padding: 16px 0; margin: 0;">
+  <div style="position: relative;">
+    
+    <!-- Fade masks (left & right only, don't clip vertically) -->
+    <div style="position: absolute; left: 0; top: 0; width: 120px; height: 100%; background: linear-gradient(to right, #040B14, transparent); z-index: 2; pointer-events: none;"></div>
+    <div style="position: absolute; right: 0; top: 0; width: 120px; height: 100%; background: linear-gradient(to left, #040B14, transparent); z-index: 2; pointer-events: none;"></div>
+
+    <!-- Track (overflow visible so tooltip shows) -->
+    <div style="overflow: hidden;">
+      <div id="tools-track" style="display:flex; gap:14px; width:max-content; animation:marquee 28s linear infinite; padding: 10px 0 30px;">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
 <!-- Commission Projects Section -->
     <section id="commission-projects" class="section" style="padding: 40px 0; background: #040B14;">
 
@@ -150,8 +170,8 @@
           <!-- ── Card 1: Melissa's Portfolio ── -->
           <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <a href="https://sasadmd31.github.io/MelissaDelaCruz_DMD-Portfolio/index.html" target="_blank" class="commission-card">
-              <div class="commission-thumb" style="background:#2d2060; color:#a98df5;">
-                🦷
+              <div class="commission-thumb" style="background:#2d2060 url('assets/img/dmdprtfolio_mu.png') center/cover no-repeat; color:#a98df5;">
+                <!-- 🦷 -->
                 <span class="commission-badge">Commission</span>
               </div>
               <div class="commission-body">
@@ -172,8 +192,8 @@
           <!-- ── Card 2: BarHome Site ── -->
           <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <a href="BarHome.html" target="_blank" class="commission-card">
-              <div class="commission-thumb" style="background:#2d2060; color:#3ecfad;">
-                🍺
+              <div class="commission-thumb" style="background:#2d2060 url('assets/img/bar_mock.png') center/cover no-repeat; color:#3ecfad;">
+                <!-- 🍺 -->
                 <span class="commission-badge" style="background:#0f6e56; color:#e1f5ee;">Commission</span>
               </div>
               <div class="commission-body">
@@ -1074,6 +1094,32 @@ company achieve its goals</p>
       }
     });
   });
+</script>
+
+<script>
+const tools = [
+  { name:"Figma",       bg:"#1E1E1E", svg:`<svg width="30" height="30" viewBox="0 0 38 38" fill="none"><rect x="9" y="2" width="10" height="12" rx="5" fill="#F24E1E"/><rect x="19" y="2" width="10" height="12" rx="5" fill="#FF7262"/><rect x="9" y="14" width="10" height="12" rx="5" fill="#A259FF"/><rect x="9" y="26" width="10" height="12" rx="5" fill="#0ACF83"/><circle cx="24" cy="20" r="5" fill="#1ABCFE"/></svg>` },
+  { name:"Illustrator", bg:"#330000", svg:`<svg width="32" height="32" viewBox="0 0 36 36"><text x="5" y="28" font-size="26" font-weight="900" font-family="Arial" fill="#FF9A00">Ai</text></svg>` },
+  { name:"Photoshop",   bg:"#001E36", svg:`<svg width="32" height="32" viewBox="0 0 36 36"><text x="4" y="28" font-size="26" font-weight="900" font-family="Arial" fill="#31A8FF">Ps</text></svg>` },
+  { name:"InDesign",    bg:"#49021F", svg:`<svg width="32" height="32" viewBox="0 0 36 36"><text x="4" y="28" font-size="26" font-weight="900" font-family="Arial" fill="#FF3366">Id</text></svg>` },
+  { name:"Premiere",    bg:"#0F0033", svg:`<svg width="32" height="32" viewBox="0 0 36 36"><text x="3" y="28" font-size="25" font-weight="900" font-family="Arial" fill="#9999FF">Pr</text></svg>` },
+  { name:"Canva",       bg:"#7D2AE8", svg:`<svg width="32" height="32" viewBox="0 0 36 36"><text x="3" y="27" font-size="16" font-weight="700" font-family="Arial" fill="white">Canva</text></svg>` },
+  { name:"CapCut",      bg:"#111111", svg:`<svg width="30" height="30" viewBox="0 0 36 36"><rect x="4" y="10" width="14" height="16" rx="3" fill="white"/><polygon points="18,14 30,8 30,28 18,22" fill="white"/></svg>` },
+  { name:"Bootstrap",   bg:"#7952B3", svg:`<svg width="30" height="30" viewBox="0 0 36 36"><text x="7" y="28" font-size="28" font-weight="900" font-family="Arial" fill="white">B</text></svg>` },
+  { name:"Mailchimp",   bg:"#FFE01B", svg:`<svg width="30" height="30" viewBox="0 0 36 36"><ellipse cx="18" cy="20" rx="10" ry="11" fill="#FFE01B" stroke="#201F1F" stroke-width="1.2"/><circle cx="15" cy="15" r="1.5" fill="#201F1F"/><circle cx="21" cy="15" r="1.5" fill="#201F1F"/><path d="M15 19 Q18 22 21 19" stroke="#201F1F" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg>` },
+  { name:"Tilda",       bg:"#F5F0E8", svg:`<svg width="30" height="30" viewBox="0 0 36 36"><circle cx="18" cy="18" r="13" stroke="#201F1F" stroke-width="1.8" fill="none"/><path d="M10 18 Q14 13 18 18 Q22 23 26 18" stroke="#201F1F" stroke-width="2" fill="none" stroke-linecap="round"/></svg>` },
+  { name:"HTML",        bg:"#FFFFFF", svg:`<svg width="30" height="30" viewBox="0 0 36 36"><rect x="3" y="8" width="30" height="20" rx="4" fill="#f1f1f1" stroke="#ddd"/><text x="6" y="23" font-size="13" font-weight="700" font-family="monospace" fill="#555">&lt;/&gt;</text></svg>` },
+  { name:"Blender",     bg:"#1A1A2E", svg:`<svg width="32" height="32" viewBox="0 0 36 36"><circle cx="18" cy="18" r="9" fill="none" stroke="#EA7600" stroke-width="3"/><circle cx="18" cy="18" r="3.5" fill="#EA7600"/><line x1="18" y1="4" x2="18" y2="10" stroke="#EA7600" stroke-width="2.5" stroke-linecap="round"/><line x1="28" y1="26" x2="23" y2="23" stroke="#EA7600" stroke-width="2.5" stroke-linecap="round"/><line x1="8" y1="26" x2="13" y2="23" stroke="#EA7600" stroke-width="2.5" stroke-linecap="round"/></svg>` },
+];
+
+const track = document.getElementById('tools-track');
+[...tools, ...tools].forEach(t => {
+  const el = document.createElement('div');
+  el.className = 'tool-icon';
+  el.style.background = t.bg;
+  el.innerHTML = t.svg + `<span class="tool-tooltip">${t.name}</span>`;
+  track.appendChild(el);
+});
 </script>
 
   <!-- Vendor JS Files -->
