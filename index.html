@@ -1467,6 +1467,21 @@ document.getElementById("popup").addEventListener("click", function(e) {
 });
 </script>
 
+<script>
+  function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  document.querySelectorAll(".item").forEach(item => {
+    const stats = item.querySelectorAll(".stats span");
+
+    const likes = getRandom(5, 999);   // adjust range mo dito
+    const views = getRandom(50, 5000); // adjust range mo dito
+
+    stats[0].textContent = `👍 ${likes}`;
+    stats[1].textContent = `👁 ${views}`;
+  });
+</script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
