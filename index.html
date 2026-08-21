@@ -171,19 +171,179 @@ h1,h2,h3,h4{font-family:var(--font-d); margin:0; letter-spacing:-0.01em; color:v
 /* ============================================================
    TOOLS MARQUEE
 ============================================================ */
-.marquee-band{background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:22px 0; position:relative;}
-.marquee-band::before, .marquee-band::after{
-  content:""; position:absolute; top:0; bottom:0; width:120px; z-index:2; pointer-events:none;
+
+.marquee-band {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 22px 0;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
-.marquee-band::before{left:0; background:linear-gradient(to right, var(--bg-alt), transparent);}
-.marquee-band::after{right:0; background:linear-gradient(to left, var(--bg-alt), transparent);}
-.marquee-track{display:flex; gap:14px; width:max-content; animation:scroll 32s linear infinite;}
-@keyframes scroll{from{transform:translateX(0);} to{transform:translateX(-50%);}}
-.tool-chip{
-  display:flex; align-items:center; gap:8px; padding:9px 16px; border-radius:999px; background:var(--surface);
-  border:1px solid var(--border); font-family:var(--font-m); font-size:.82rem; color:var(--text-dim); white-space:nowrap;
+
+/* Fade edges */
+.marquee-band::before,
+.marquee-band::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
 }
-.tool-chip .swatch{width:18px; height:18px; border-radius:5px; flex-shrink:0;}
+
+.marquee-band::before {
+    left: 0;
+    background: linear-gradient(
+        to right,
+        var(--bg-alt),
+        transparent
+    );
+}
+
+.marquee-band::after {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        var(--bg-alt),
+        transparent
+    );
+}
+
+/* Moving track */
+.marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: max-content;
+    min-width: max-content;
+    animation: scroll 32s linear infinite;
+    will-change: transform;
+}
+
+/* Animation */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Tool item */
+.tool-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 16px;
+
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+
+    font-family: var(--font-m);
+    font-size: 0.82rem;
+    color: var(--text-dim);
+
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Icon / color */
+.tool-chip .swatch {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 768px) {
+
+    .marquee-band {
+        padding: 18px 0;
+    }
+
+    .marquee-band::before,
+    .marquee-band::after {
+        width: 60px;
+    }
+
+    .marquee-track {
+        gap: 10px;
+        animation-duration: 26s;
+    }
+
+    .tool-chip {
+        padding: 8px 13px;
+        font-size: 0.76rem;
+        gap: 7px;
+    }
+
+    .tool-chip .swatch {
+        width: 16px;
+        height: 16px;
+        min-width: 16px;
+        border-radius: 4px;
+    }
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 480px) {
+
+    .marquee-band {
+        padding: 15px 0;
+    }
+
+    .marquee-band::before,
+    .marquee-band::after {
+        width: 35px;
+    }
+
+    .marquee-track {
+        gap: 8px;
+        animation-duration: 22s;
+    }
+
+    .tool-chip {
+        padding: 7px 11px;
+        font-size: 0.7rem;
+        gap: 6px;
+    }
+
+    .tool-chip .swatch {
+        width: 14px;
+        height: 14px;
+        min-width: 14px;
+        border-radius: 4px;
+    }
+}
+
+
+/* ============================================================
+   REDUCE MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .marquee-track {
+        animation: none;
+    }
+}
 
 /* ============================================================
    FEATURED WORK (commissions)
