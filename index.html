@@ -8,6 +8,13 @@
 
 <link rel="icon" href="assets/img/EmDesignIcon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0D1117">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Emir">
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -484,6 +491,45 @@ footer p{color:var(--text-dim); font-size:.85rem;}
   .facts{grid-template-columns:1fr;}
   .section{padding:64px 0;}
 }
+
+/* ---------- PWA install button ---------- */
+#pwa-install{
+  display:none;
+  position:fixed;
+  left:18px;
+  right:18px;
+  bottom:18px;
+  z-index:500;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:14px 16px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:color-mix(in srgb, var(--surface) 94%, transparent);
+  box-shadow:0 18px 45px rgba(0,0,0,.35);
+  backdrop-filter:blur(14px);
+}
+#pwa-install.show{display:flex;}
+#pwa-install .pwa-text{min-width:0;}
+#pwa-install strong{display:block;font-family:var(--font-d);font-size:.92rem;}
+#pwa-install span{display:block;color:var(--text-dim);font-size:.78rem;margin-top:2px;}
+#pwa-install .pwa-actions{display:flex;gap:8px;flex-shrink:0;}
+#pwa-install button{
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:9px 12px;
+  cursor:pointer;
+  font-family:var(--font-b);
+  font-weight:600;
+}
+#pwa-install .pwa-install-btn{background:var(--accent);color:var(--accent-ink);border-color:transparent;}
+#pwa-install .pwa-close{background:var(--surface-2);color:var(--text);}
+@media(max-width:480px){
+  #pwa-install{align-items:flex-start;}
+  #pwa-install .pwa-actions{flex-direction:column;}
+}
+
 </style>
 </head>
 <body>
@@ -790,6 +836,19 @@ footer p{color:var(--text-dim); font-size:.85rem;}
   </div>
 </section>
 
+
+<!-- ============================ PWA INSTALL ============================ -->
+<div id="pwa-install" role="dialog" aria-label="Install portfolio app">
+  <div class="pwa-text">
+    <strong>Install Emir Portfolio</strong>
+    <span>Add this portfolio to your phone like an app.</span>
+  </div>
+  <div class="pwa-actions">
+    <button class="pwa-close" id="pwa-close" type="button">Not now</button>
+    <button class="pwa-install-btn" id="pwa-install-btn" type="button">Install</button>
+  </div>
+</div>
+
 <footer>
   <div class="wrap">
     <p>© Copyright 2026 RTS — Emir Llagas. All rights reserved.</p>
@@ -996,6 +1055,50 @@ footer p{color:var(--text-dim); font-size:.85rem;}
 
 /* ---------- back to top ---------- */
 document.getElementById('totop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ---------- PWA / service worker ---------- */
+(function(){
+  if('serviceWorker' in navigator){
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('./sw.js').catch(function(err){
+        console.warn('Service worker registration failed:', err);
+      });
+    });
+  }
+
+  let deferredPrompt = null;
+  const installBox = document.getElementById('pwa-install');
+  const installBtn = document.getElementById('pwa-install-btn');
+  const closeBtn = document.getElementById('pwa-close');
+
+  window.addEventListener('beforeinstallprompt', function(e){
+    e.preventDefault();
+    deferredPrompt = e;
+    if(installBox) installBox.classList.add('show');
+  });
+
+  if(installBtn){
+    installBtn.addEventListener('click', async function(){
+      if(!deferredPrompt) return;
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      if(installBox) installBox.classList.remove('show');
+    });
+  }
+
+  if(closeBtn){
+    closeBtn.addEventListener('click', function(){
+      if(installBox) installBox.classList.remove('show');
+    });
+  }
+
+  window.addEventListener('appinstalled', function(){
+    deferredPrompt = null;
+    if(installBox) installBox.classList.remove('show');
+  });
+})();
+
 </script>
 </body>
 </html>
