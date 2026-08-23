@@ -1,0 +1,25 @@
+{
+  "name": "Emir Llagas \u2014 Portfolio",
+  "short_name": "Emir Portfolio",
+  "description": "Emir Llagas \u2014 Junior Programmer & Designer portfolio.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0D1117",
+  "theme_color": "#0D1117",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/img/EmDesignIcon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/img/EmDesignIcon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
