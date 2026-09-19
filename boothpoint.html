@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BoothPoint</title>
+<meta name="description" content="Sales landing page pitching BoothPoint — Rhyme Tech Systems' self-hosted booking &amp; studio-management software — to photobooth and photography business owners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="boothpoint.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="nav">
+  <a href="#" class="brand">Booth<em>Point</em><span class="by">RTS</span></a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#preview">Preview</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+    </button>
+    <a href="#contact" class="btn btn-primary btn-sm">Book a Demo</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="tag">Self-hosted studio software</p>
+      <h1>Stop <em>renting</em> your booking software.</h1>
+      <p class="hero-sub">BoothPoint runs your bookings, payments, staff, and your studio's whole public website &mdash; installed on hosting you already pay for, licensed once, yours for good.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Book a Demo</a>
+        <a href="#pricing" class="btn btn-secondary">See Pricing</a>
+      </div>
+      <p class="hero-trust"><span class="mono">&#8369;7,000</span> one-time <span class="dot">&middot;</span> no monthly fees <span class="dot">&middot;</span> your own domain</p>
+    </div>
+    <div class="viewfinder" aria-hidden="true">
+      <div class="vf-corner tl"></div>
+      <div class="vf-corner tr"></div>
+      <div class="vf-corner bl"></div>
+      <div class="vf-corner br"></div>
+      <div class="vf-flash"></div>
+      <div class="vf-readout mono">
+        <span id="vfSetting">f/2.8 &middot; 1/125 &middot; ISO 200</span>
+        <span>STUDIO BOOKED</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">What's inside</p>
+      <h2>Everything a studio actually runs on, in one system.</h2>
+      <p>Not a spreadsheet plus five apps duct-taped together &mdash; one login, one database, one bill.</p>
+    </div>
+    <div class="feature-grid stagger">
+
+      <div class="feature reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h2M14 14h2M8 17h2"/></svg></div>
+        <h3>Bookings &amp; Calendar</h3>
+        <p>Every inquiry tracked from first message to event day, with separate capacity limits for photographer and photobooth teams so double-bookings never sneak through.</p>
+      </div>
+
+      <div class="feature reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="13" rx="2"/><path d="M2.5 10h19"/><circle cx="17" cy="14.5" r="1.3" fill="currentColor" stroke="none"/></svg></div>
+        <h3>Payments &amp; Paperwork</h3>
+        <p>Percentage or fixed deposits, balance-due tracking, and PDF quotations and invoices generated straight from the booking &mdash; no separate invoicing app.</p>
+      </div>
+
+      <div class="feature reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5 14.5 9.5"/><path d="M11 6.5 12.6 4.9a3.5 3.5 0 0 1 5 5L16 11.5"/><path d="M13 17.5 11.4 19.1a3.5 3.5 0 0 1-5-5L8 12.5"/></svg></div>
+        <h3>Public Booking Tracker</h3>
+        <p>Clients follow their own status &mdash; inquiry, confirmed, deposit paid, gallery delivered &mdash; through one link you send them. No login, no app to install.</p>
+      </div>
+
+      <div class="feature reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19.5c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5"/><circle cx="17.5" cy="8.5" r="2.4"/><path d="M15.8 14.3c2.3.3 3.9 2.2 3.9 5.2"/></svg></div>
+        <h3>Staff &amp; Equipment</h3>
+        <p>Assign photographers and photobooth crews per event, track payouts per team, and keep tabs on gear without a spreadsheet.</p>
+      </div>
+
+      <div class="feature reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 6.5 9 6.5 9-6.5"/></svg></div>
+        <h3>Mail That Doesn't Quit</h3>
+        <p>Confirmations and reminders send through your main provider. If it ever fails, BoothPoint switches to a backup provider automatically for 24 hours &mdash; no missed emails.</p>
+      </div>
+
+      <div class="feature reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.97 0-9-3.4-9-8a8 8 0 0 1 8-8 7 7 0 0 1 7 7c0 1.7-1.3 3-3 3h-1a2 2 0 0 0-1.4 3.4c.5.5.4 1.4-.3 1.7-.3.1-.7.2-1.3.2Z"/><circle cx="7.5" cy="11.5" r="1" fill="currentColor" stroke="none"/><circle cx="11" cy="7.5" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="9" r="1" fill="currentColor" stroke="none"/></svg></div>
+        <h3>Make It Yours</h3>
+        <p>Pick your color palette and homepage layout &mdash; Split, Centered, or Full-Bleed Photo &mdash; and write your own About page and FAQ. One codebase, your studio's look.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="preview" style="background:var(--surface-2); border-block:1px solid var(--border);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">See it in action</p>
+      <h2>A quick look inside.</h2>
+      <p>Illustrative previews &mdash; your real bookings, calendar, and branding replace these once it's installed.</p>
+    </div>
+    <div class="preview-grid stagger">
+
+      <div class="frame reveal">
+        <div class="frame-bar">
+          <div class="frame-dots"><span></span><span></span><span></span></div>
+          <div class="frame-url">yourstudio.com/admin/bookings</div>
+        </div>
+        <div class="frame-body">
+          <p class="frame-label">Booking Calendar</p>
+          <div class="mini-cal" aria-hidden="true">
+            <span></span><span></span><span class="booked"></span><span></span><span></span><span class="flash"></span><span></span>
+            <span></span><span class="booked"></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span class="booked"></span><span></span><span></span><span></span>
+          </div>
+          <div class="mock-card">
+            <strong>Reyes Wedding &mdash; Oct 12</strong>
+            Full Package + Photobooth
+            <span class="mock-pill">+ &#8369;9,000 deposit paid</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="frame reveal">
+        <div class="frame-bar">
+          <div class="frame-dots"><span></span><span></span><span></span></div>
+          <div class="frame-url">yourstudio.com/track/BK-2026-0142</div>
+        </div>
+        <div class="frame-body">
+          <p class="frame-label">Public Booking Tracker</p>
+          <div class="mock-track">
+            <div class="mock-step done"><div class="mock-step-dot">+</div><div><div class="mock-step-label">Inquiry Received</div><div class="mock-step-sub">SEP 02</div></div></div>
+            <div class="mock-step done"><div class="mock-step-dot">+</div><div><div class="mock-step-label">Confirmed</div><div class="mock-step-sub">SEP 04</div></div></div>
+            <div class="mock-step done"><div class="mock-step-dot">+</div><div><div class="mock-step-label">Deposit Paid</div><div class="mock-step-sub">SEP 05</div></div></div>
+            <div class="mock-step current"><div class="mock-step-dot">&#9679;</div><div><div class="mock-step-label">Event Day</div><div class="mock-step-sub">OCT 12</div></div></div>
+            <div class="mock-step"><div class="mock-step-dot"></div><div><div class="mock-step-label" style="color:var(--muted);">Gallery Delivered</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="frame reveal">
+        <div class="frame-bar">
+          <div class="frame-dots"><span></span><span></span><span></span></div>
+          <div class="frame-url">yourstudio.com/admin/settings</div>
+        </div>
+        <div class="frame-body">
+          <p class="frame-label">Branding &amp; Layout</p>
+          <div class="mock-layouts">
+            <div class="mock-layout"><div class="mock-layout-vis split"></div><span>SPLIT</span></div>
+            <div class="mock-layout active"><div class="mock-layout-vis centered"></div><span>CENTER</span></div>
+            <div class="mock-layout"><div class="mock-layout-vis fullbleed"></div><span>FULL</span></div>
+          </div>
+          <p class="frame-label" style="margin-bottom:.6rem;">Brand Palette</p>
+          <div class="mock-swatches" aria-hidden="true">
+            <i style="background:#1a43f5;"></i><i style="background:#7b2ff7;"></i><i style="background:#c9601a;"></i><i style="background:#15803d;"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">Pricing</p>
+      <h2>One license. No subscriptions.</h2>
+      <p>Every tier is the same software &mdash; higher tiers unlock more modules, not a faster version.</p>
+    </div>
+
+    <div class="tiers stagger">
+      <div class="tier reveal">
+        <div class="tier-name">Starter</div>
+        <div class="tier-for">Solo operators just getting booked</div>
+        <div class="tier-price"><sup>&#8369;</sup>7,000<small>&nbsp;one&#8209;time</small></div>
+        <ul>
+          <li>Bookings, calendar &amp; customer records</li>
+          <li>Payments tracking &amp; balance due</li>
+          <li>PDF quotations &amp; invoices</li>
+          <li>Public booking-status link for clients</li>
+          <li>1 admin account</li>
+        </ul>
+        <div class="tier-foot">Best for: 1-person studios, first year in business</div>
+      </div>
+
+      <div class="tier featured reveal">
+        <p class="tier-pick">Most chosen</p>
+        <div class="tier-name">Professional</div>
+        <div class="tier-for">Small teams juggling staff &amp; gear</div>
+        <div class="tier-price"><sup>&#8369;</sup>13,000<small>&nbsp;one&#8209;time</small></div>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>Staff assignment &amp; payout tracking</li>
+          <li>Equipment &amp; inventory tracking</li>
+          <li>Automatic reminder &amp; feedback emails</li>
+          <li>Reviews &amp; testimonials module</li>
+          <li>Up to 3 admin accounts</li>
+        </ul>
+        <div class="tier-foot">Best for: studios with photographers, photobooth crews, and repeat bookings</div>
+      </div>
+
+      <div class="tier reveal">
+        <div class="tier-name">Business</div>
+        <div class="tier-for">Multi-team studios scaling up</div>
+        <div class="tier-price"><sup>&#8369;</sup>22,000<small>&nbsp;one&#8209;time</small></div>
+        <ul>
+          <li>Everything in Professional</li>
+          <li>Google Calendar sync</li>
+          <li>Custom hex brand colors</li>
+          <li>Unlimited admin accounts</li>
+          <li>Guided install + onboarding call</li>
+          <li>First year of updates included</li>
+        </ul>
+        <div class="tier-foot">Best for: studios running several crews or locations</div>
+      </div>
+    </div>
+
+    <p class="pricing-note">Installed on hosting you already have &mdash; no special server required. Setup, white-label, and data migration available as add-ons.</p>
+  </div>
+</section>
+
+<section id="comparison">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">What's in each tier</p>
+      <h2>Every tier is the same codebase.</h2>
+      <p>Higher tiers unlock more modules &mdash; not a faster or lighter version.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>Feature</th><th>Starter</th><th>Professional</th><th>Business</th></tr>
+        </thead>
+        <tbody>
+          <tr class="group-row"><td colspan="4">Booking &amp; customers</td></tr>
+          <tr><td>Booking &amp; calendar management</td><td class="yes">+</td><td class="yes">+</td><td class="yes">+</td></tr>
+          <tr><td>Public booking-tracker link</td><td class="yes">+</td><td class="yes">+</td><td class="yes">+</td></tr>
+          <tr><td>Google Calendar sync</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">+</td></tr>
+
+          <tr class="group-row"><td colspan="4">Money</td></tr>
+          <tr><td>Payments &amp; balance tracking</td><td class="yes">+</td><td class="yes">+</td><td class="yes">+</td></tr>
+          <tr><td>PDF quotations &amp; invoices</td><td class="yes">+</td><td class="yes">+</td><td class="yes">+</td></tr>
+          <tr><td>Expense &amp; profit reports</td><td class="no">&mdash;</td><td class="yes">+</td><td class="yes">+</td></tr>
+
+          <tr class="group-row"><td colspan="4">Operations</td></tr>
+          <tr><td>Staff assignment &amp; payouts</td><td class="no">&mdash;</td><td class="yes">+</td><td class="yes">+</td></tr>
+          <tr><td>Equipment &amp; inventory tracking</td><td class="no">&mdash;</td><td class="yes">+</td><td class="yes">+</td></tr>
+          <tr><td>Admin accounts</td><td>1</td><td>Up to 3</td><td>Unlimited</td></tr>
+
+          <tr class="group-row"><td colspan="4">Client communication</td></tr>
+          <tr><td>Automatic reminder &amp; feedback emails</td><td class="no">&mdash;</td><td class="yes">+</td><td class="yes">+</td></tr>
+          <tr><td>Gallery delivery + backup email provider</td><td class="no">&mdash;</td><td class="yes">+</td><td class="yes">+</td></tr>
+          <tr><td>Reviews &amp; testimonials</td><td class="no">&mdash;</td><td class="yes">+</td><td class="yes">+</td></tr>
+
+          <tr class="group-row"><td colspan="4">Setup &amp; branding</td></tr>
+          <tr><td>Logo &amp; preset color palette</td><td class="yes">+</td><td class="yes">+</td><td class="yes">+</td></tr>
+          <tr><td>Custom hex brand colors</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">+</td></tr>
+          <tr><td>Guided install + onboarding call</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">+</td></tr>
+          <tr><td>Free update &amp; support year</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td>Year 1</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="addons" style="background:var(--surface-2); border-block:1px solid var(--border);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">Add-ons</p>
+      <h2>Sold separately on any tier.</h2>
+      <p>For studios that want help beyond the license itself.</p>
+    </div>
+    <div class="addons stagger">
+      <div class="addon reveal">
+        <div><h3>Setup &amp; installation</h3><p>I install it on the studio's own hosting, connect their domain and database, and create the first admin account.</p></div>
+        <div class="addon-price">&#8369;2,500</div>
+      </div>
+      <div class="addon reveal">
+        <div><h3>Annual update &amp; support renewal</h3><p>Bug fixes, security patches, and minor feature updates for one year. Optional &mdash; the software keeps working without it.</p></div>
+        <div class="addon-price">&#8369;2,500<small>/yr</small></div>
+      </div>
+      <div class="addon reveal">
+        <div><h3>Custom branding / white-label</h3><p>Replace every &ldquo;BoothPoint&rdquo; mention in the interface with the studio's own product name and identity.</p></div>
+        <div class="addon-price">&#8369;3,000</div>
+      </div>
+      <div class="addon reveal">
+        <div><h3>Data migration</h3><p>Import existing bookings and customer records from a spreadsheet into their new install.</p></div>
+        <div class="addon-price">&#8369;1,500</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="final-cta reveal">
+      <div>
+        <h2>Ready to stop juggling spreadsheets?</h2>
+        <p>Tell us about your studio &mdash; team size, how you book events now &mdash; and we'll show you BoothPoint running with your own name on it.</p>
+        <p class="note">RHYMETECHSYSTEMS@GMAIL.COM &middot; REPLIES WITHIN 1 BUSINESS DAY</p>
+      </div>
+      <div class="final-cta-actions">
+        <a href="mailto:rhymetechsystems@gmail.com?subject=BoothPoint%20Demo%20Request" class="btn btn-primary">Email RTS</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div><strong>BoothPoint</strong> &mdash; booking &amp; studio management software</div>
+    <div class="mono">RHYME TECH SYSTEMS</div>
+  </div>
+</footer>
+
+<div class="contact-fab">
+  <a href="https://www.facebook.com/rimenomis63/" target="_blank" rel="noopener noreferrer" aria-label="Message us on Facebook">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.15 2 11.3c0 2.94 1.47 5.56 3.77 7.28V22l3.44-1.89c.9.25 1.85.39 2.79.39 5.5 0 10-4.15 10-9.3S17.5 2 12 2Zm1.01 12.53-2.55-2.72-4.98 2.72 5.48-5.82 2.61 2.72 4.92-2.72-5.48 5.82Z"/></svg>
+  </a>
+  <a href="tel:+971522596095" aria-label="Call us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L7.9 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+  </a>
+  <a href="mailto:rhymetechsystems@gmail.com" aria-label="Email us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 6.5 9 6.5 9-6.5"/></svg>
+  </a>
+</div>
+
+<noscript><style>.reveal{ opacity:1 !important; transform:none !important; } .vf-corner{ opacity:1 !important; }</style></noscript>
+
+<script src="boothpoint.js"></script>
+</body>
+</html>
