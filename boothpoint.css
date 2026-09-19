@@ -215,6 +215,53 @@ section{ padding-block:5.2rem; }
 .feature h3{ font-size:1.05rem; font-weight:600; }
 .feature p{ color:var(--muted); font-size:.88rem; }
 
+.feature-full{
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.8rem 2rem;
+}
+.feature-full-main{
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  max-width: 680px;
+}
+.feature-full-main h3{ font-size:1.1rem; font-weight:600; margin-bottom:.35rem; }
+.feature-full-main p{ color:var(--muted); font-size:.88rem; margin:0; }
+.feature-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+}
+.feature-pill{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .72rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface-2));
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  padding: .35rem .7rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+@media (max-width:900px){
+  .feature-full{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.5rem;
+  }
+  .feature-full-main{
+    flex-direction: column;
+    gap: .75rem;
+  }
+}
+
 /* ---------- preview mockups ---------- */
 .preview-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.3rem; }
 @media (max-width:900px){ .preview-grid{ grid-template-columns:1fr; } }
