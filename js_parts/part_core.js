@@ -128,4 +128,28 @@ module.exports = `(function () {
       }, 300);
     }, 3200);
   }
+
+  // ========== SCROLL TO HERO / TOP BUTTON ==========
+  var scrollTopBtn = document.getElementById('scrollTopBtn');
+  if (scrollTopBtn) {
+    function checkScrollTop() {
+      if (window.pageYOffset > 280) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    }
+    window.addEventListener('scroll', checkScrollTop, { passive: true });
+    checkScrollTop();
+
+    scrollTopBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var hero = document.getElementById('hero') || document.querySelector('.hero');
+      if (hero) {
+        hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
 `;

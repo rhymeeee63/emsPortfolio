@@ -223,6 +223,13 @@ module.exports = `/* ========== RESPONSIVE MEDIA QUERIES ========== */
     width: 40px;
     height: 40px;
   }
+
+  .scroll-top-btn {
+    right: calc(14px + env(safe-area-inset-right, 0px));
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* Small Mobile: 480px */
@@ -242,6 +249,13 @@ module.exports = `/* ========== RESPONSIVE MEDIA QUERIES ========== */
     bottom: 14px;
     padding: 0.65rem 1.1rem 0.65rem 0.75rem;
     font-size: 0.82rem;
+  }
+
+  .scroll-top-btn {
+    right: calc(14px + env(safe-area-inset-right, 0px));
+    bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+    width: 38px;
+    height: 38px;
   }
 
   .cal-month-head {
