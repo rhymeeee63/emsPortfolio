@@ -229,13 +229,13 @@
     var monthlySaaS = 4400;
     var totalGross = bookings * price * totalMonths;
     var saasFees = (monthlySaaS * totalMonths) + (totalGross * 0.015);
-    var bpCost = 13000; // Professional one-time tier
+    var bpCost = 11899; // Professional one-time tier
 
     var netSavings = Math.max(0, saasFees - bpCost);
 
     if (savingsTotal) savingsTotal.textContent = '₱' + Math.round(netSavings).toLocaleString();
     if (calcSaasCost) calcSaasCost.textContent = '₱' + Math.round(saasFees).toLocaleString() + '+';
-    if (calcBpCost) calcBpCost.textContent = '₱13,000 once';
+    if (calcBpCost) calcBpCost.textContent = '₱11,899 once';
   }
 
   if (bookingRange && priceRange && yearsRange) {
@@ -552,9 +552,9 @@
       return {
         html: '<p><strong>BoothPoint Perpetual License Tiers (One-Time Payment):</strong></p>' +
           '<ul>' +
-          '<li><strong>Starter (₱7,000):</strong> Perfect for solo operators. Includes booking calendar, payments & balance tracking, auto PDF invoices, and public tracking links. (1 admin)</li>' +
-          '<li><strong>Professional (₱13,000):</strong> Most chosen! Adds staff assignment & payouts, equipment inventory, activity audit logs, auto reminder emails, and customer reviews. (Up to 3 admins)</li>' +
-          '<li><strong>Business (₱22,000):</strong> For multi-crew operations. Adds Google Calendar 2-way sync, custom hex brand colors, unlimited admins, 1-on-1 guided install, and 1 year of updates.</li>' +
+          '<li><strong>Starter (₱6,499):</strong> Perfect for solo operators. Includes booking calendar, payments & balance tracking, auto PDF invoices, and public tracking links. (1 admin)</li>' +
+          '<li><strong>Professional (₱11,899):</strong> Most chosen! Adds staff assignment & payouts, equipment inventory, activity audit logs, auto reminder emails, and customer reviews. (Up to 3 admins)</li>' +
+          '<li><strong>Business (₱20,499):</strong> For multi-crew operations. Adds Google Calendar 2-way sync, custom hex brand colors, unlimited admins, 1-on-1 guided install, and 1 year of updates.</li>' +
           '</ul>' +
           '<p><em>Zero monthly subscriptions. The software is installed on your hosting and belongs to you forever!</em></p>' +
           '<a href="#pricing" class="bp-ai-action-link" onclick="closeAiAssistant()">👉 View Pricing Section</a>' +
@@ -662,7 +662,7 @@
     if (raw.indexOf('staff') !== -1 || raw.indexOf('crew') !== -1 || raw.indexOf('payout') !== -1 || raw.indexOf('operator') !== -1 || raw.indexOf('equipment') !== -1 || raw.indexOf('gear') !== -1 || raw.indexOf('gamit') !== -1) {
       return {
         html: '<p><strong>Staff Assignments &amp; Equipment Inventory 👥</strong></p>' +
-          '<p>Available starting on the <strong>Professional Tier (₱13,000)</strong>:</p>' +
+          '<p>Available starting on the <strong>Professional Tier (₱11,899)</strong>:</p>' +
           '<ul>' +
           '<li><strong>Crew Dispatching:</strong> Assign lead photographers, photobooth operators, and assistants to specific dates.</li>' +
           '<li><strong>Payout Calculation:</strong> Automatically log event-based staff fees, commission splits, and payment status.</li>' +
@@ -728,7 +728,7 @@
       html: '<p><strong>Got it! Here is how BoothPoint can help:</strong></p>' +
         '<p>BoothPoint is Rhyme Tech Systems\' <strong>self-hosted studio &amp; photobooth management platform</strong> that replaces costly monthly SaaS subscriptions.</p>' +
         '<ul>' +
-        '<li>One-time perpetual license (<strong>₱7,000 / ₱13,000 / ₱22,000</strong>)</li>' +
+        '<li>One-time perpetual license (<strong>₱6,499 / ₱11,899 / ₱20,499</strong>)</li>' +
         '<li>Runs on your own PHP/MySQL web hosting with 100% data privacy</li>' +
         '<li>Multi-crew booking conflict shield, automated PDF invoices with GCash/Maya QR, and client tracking portals</li>' +
         '</ul>' +
