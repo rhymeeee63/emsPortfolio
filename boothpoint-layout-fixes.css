@@ -1,0 +1,514 @@
+/* BoothPoint Complete Layout Fixes - Part 1 */
+/* Comprehensive fixes for all broken layouts */
+
+/* ========== BASE RESETS ========== */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  width: 100% !important;
+}
+
+img, svg, video {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* ========== NAVIGATION FIXES ========== */
+.nav {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: var(--surface) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.nav-hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media (max-width: 900px) {
+  .nav-hamburger {
+    display: flex;
+    order: 2;
+  }
+  
+  .nav-right {
+    order: 3;
+  }
+  
+  .nav-ai-btn {
+    display: none !important;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .nav-links.active {
+    display: flex !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 20px;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 999;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  }
+}
+
+/* ========== HERO SECTION FIXES ========== */
+.hero {
+  position: relative !important;
+  overflow: visible !important;
+  padding: 5rem 0 !important;
+}
+
+.hero-grid {
+  display: grid !important;
+  grid-template-columns: 1.05fr 0.95fr !important;
+  gap: 3rem !important;
+  align-items: center !important;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 3.5rem 0 !important;
+  }
+  
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  
+  .viewfinder {
+    order: -1 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 2.5rem 0 !important;
+  }
+  
+  .hero h1 {
+    font-size: clamp(1.8rem, 8vw, 2.4rem) !important;
+  }
+  
+  .hero-sub {
+    font-size: 1rem !important;
+  }
+  
+  .hero-ctas {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  .hero-ctas .btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* ========== WORKFLOW GRID FIXES ========== */
+.workflow-section {
+  padding: 5rem 0 !important;
+}
+
+.workflow-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.2rem !important;
+}
+
+@media (max-width: 1024px) {
+  .workflow-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .workflow-section {
+    padding: 3.5rem 0 !important;
+  }
+  
+  .workflow-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .workflow-card {
+    padding: 1.8rem !important;
+  }
+}
+
+/* ========== FEATURE GRID FIXES ========== */
+.feature-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1px !important;
+  background: var(--border) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+
+.feature {
+  background: var(--surface) !important;
+  padding: 2rem 1.8rem !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .feature-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  
+  .feature {
+    border-bottom: 1px solid var(--border) !important;
+  }
+  
+  .feature:last-child {
+    border-bottom: none !important;
+  }
+}
+
+/* ========== PREVIEW SECTION & TABS FIXES ========== */
+.preview-tabs-nav {
+  display: flex !important;
+  gap: 0.6rem !important;
+  margin-bottom: 1.5rem !important;
+  overflow-x: auto !important;
+  padding-bottom: 0.5rem !important;
+  scrollbar-width: thin !important;
+}
+
+.preview-tabs-nav::-webkit-scrollbar {
+  height: 4px !important;
+}
+
+.preview-tabs-nav::-webkit-scrollbar-thumb {
+  background: var(--border) !important;
+  border-radius: 2px !important;
+}
+
+.tab-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0.7rem 1.2rem !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px !important;
+  background: var(--surface) !important;
+  color: var(--muted) !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+.tab-btn:hover {
+  color: var(--ink) !important;
+  border-color: var(--accent) !important;
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface)) !important;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+.tab-pane {
+  display: none !important;
+}
+
+.tab-pane.active {
+  display: block !important;
+}
+
+.preview-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.3rem !important;
+}
+
+@media (max-width: 900px) {
+  .preview-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ========== PRICING & OTHER SECTIONS ========== */
+.tier-row {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.5rem !important;
+}
+
+@media (max-width: 900px) {
+  .tier-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.calc-card {
+  display: grid !important;
+  grid-template-columns: 1.2fr 0.8fr !important;
+  gap: 2.5rem !important;
+  align-items: center !important;
+}
+
+@media (max-width: 850px) {
+  .calc-card {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.test-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.5rem !important;
+}
+
+@media (max-width: 900px) {
+  .test-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.dash-stats {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1rem !important;
+}
+
+@media (max-width: 900px) {
+  .dash-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .dash-stats {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ========== GENERAL LAYOUT IMPROVEMENTS ========== */
+.wrap {
+  max-width: 1120px !important;
+  margin: 0 auto !important;
+  padding-inline: clamp(20px, 4vw, 24px) !important;
+}
+
+section {
+  padding-block: clamp(3.5rem, 7vw, 5.2rem) !important;
+}
+
+.section-head {
+  max-width: 640px !important;
+  margin-bottom: 2.5rem !important;
+}
+
+.btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 48px !important;
+  padding: 0.85rem 1.8rem !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+@media (max-width: 640px) {
+  .btn {
+    width: 100% !important;
+  }
+}
+
+/* ========== ACCESSIBILITY & TOUCH TARGETS ========== */
+@media (max-width: 768px) {
+  a, button, .btn, .tab-btn {
+    min-height: 44px !important;
+  }
+}
+
+/* ========== Z-INDEX MANAGEMENT ========== */
+.nav {
+  z-index: 1000 !important;
+}
+
+.grain {
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.ai-assistant {
+  z-index: 2000 !important;
+}
+
+/* ========== CALENDAR SECTION FIXES (CRITICAL) ========== */
+.cal-stage-grid {
+  display: grid !important;
+  grid-template-columns: 1.4fr 1fr !important;
+  gap: 1.5rem !important;
+  align-items: start !important;
+}
+
+.cal-matrix {
+  background: var(--surface-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+}
+
+.cal-month-head {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 1.2rem !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+}
+
+.cal-month-head strong {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+}
+
+.cal-grid-days {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 2px !important;
+  background: var(--border) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+.cal-day-label {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  color: var(--muted) !important;
+  text-align: center !important;
+  background: var(--surface-2) !important;
+  padding: 0.6rem 0.2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 40px !important;
+}
+
+.cal-cell {
+  aspect-ratio: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--surface) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  min-height: 42px !important;
+  position: relative !important;
+}
+
+.cal-cell.has-event {
+  background: color-mix(in srgb, var(--accent) 15%, var(--surface)) !important;
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+}
+
+.cal-cell.has-event::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 4px !important;
+  right: 4px !important;
+  width: 6px !important;
+  height: 6px !important;
+  background: var(--accent) !important;
+  border-radius: 50% !important;
+}
+
+.cal-cell.conflict-shield {
+  background: color-mix(in srgb, var(--good) 15%, var(--surface)) !important;
+  color: var(--good) !important;
+  font-weight: 700 !important;
+}
+
+@media (max-width: 850px) {
+  .cal-stage-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .cal-matrix {
+    padding: 1rem !important;
+  }
+  
+  .cal-grid-days {
+    gap: 1px !important;
+  }
+  
+  .cal-cell {
+    min-height: 36px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .cal-day-label {
+    min-height: 36px !important;
+    font-size: 0.65rem !important;
+    padding: 0.5rem 0.1rem !important;
+  }
+  
+  .cal-month-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}

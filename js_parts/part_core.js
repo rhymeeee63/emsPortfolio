@@ -1,0 +1,131 @@
+module.exports = `(function () {
+  'use strict';
+  
+  var root = document.documentElement;
+  
+  // ========== THEME TOGGLE ==========
+  try {
+    var saved = localStorage.getItem('bp-theme');
+    if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
+  } catch (e) {}
+
+  function currentTheme() {
+    var attr = root.getAttribute('data-theme');
+    if (attr) return attr;
+    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  }
+
+  var toggle = document.getElementById('themeToggle');
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var next = currentTheme() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('bp-theme', next); } catch (e) {}
+    });
+  }
+
+  // ========== MOBILE HAMBURGER MENU ==========
+  var hamburger = document.getElementById('navHamburger');
+  var navLinks = document.querySelector('.nav-links');
+  
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      var isExpanded = hamburger.classList.contains('active');
+      hamburger.setAttribute('aria-expanded', isExpanded);
+    });
+
+    // Close menu when clicking nav links
+    var navLinkItems = navLinks.querySelectorAll('a');
+    navLinkItems.forEach(function(link) {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // ========== NAV SCROLL-SPY ==========
+  var navLinksForSpy = document.querySelectorAll('.nav-links a');
+  var navMap = {};
+  navLinksForSpy.forEach(function (a) {
+    var id = a.getAttribute('href');
+    var target = id && id.charAt(0) === '#' ? document.querySelector(id) : null;
+    if (target) navMap[id] = a;
+  });
+  var navTargets = Object.keys(navMap).map(function (id) { return document.querySelector(id); }).filter(Boolean);
+  if ('IntersectionObserver' in window && navTargets.length) {
+    var navIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var link = navMap['#' + entry.target.id];
+        if (!link) return;
+        if (entry.isIntersecting) {
+          navLinksForSpy.forEach(function (a) { a.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    navTargets.forEach(function (el) { navIo.observe(el); });
+  }
+
+  // ========== SMOOTH SCROLLING FOR ANCHOR LINKS ==========
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var href = this.getAttribute('href');
+      if (href === '#' || href === '#!') return;
+      
+      var target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // ========== REVEAL ANIMATIONS ON SCROLL ==========
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  // ========== HERO VIEWFINDER CAMERA SETTINGS TICKER ==========
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var settingEl = document.getElementById('vfSetting');
+  if (settingEl && !reduceMotion) {
+    var settings = ['f/2.8 · 1/125 · ISO 200', 'f/4 · 1/250 · ISO 100', 'f/2 · 1/160 · ISO 400', 'f/1.8 · 1/200 · ISO 640'];
+    var idx = 0;
+    setInterval(function () {
+      idx = (idx + 1) % settings.length;
+      settingEl.style.opacity = '0';
+      setTimeout(function () {
+        settingEl.textContent = settings[idx];
+        settingEl.style.opacity = '1';
+      }, 300);
+    }, 3200);
+  }
+`;

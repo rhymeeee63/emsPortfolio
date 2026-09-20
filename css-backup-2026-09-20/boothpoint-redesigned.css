@@ -1,0 +1,390 @@
+/* ===================================================================
+   BOOTHPOINT COMPLETE REDESIGN
+   Comprehensive fixes for all layout and design issues
+   =================================================================== */
+
+/* ========== BASE RESETS ========== */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  width: 100% !important;
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+img, svg, video {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* ========== NAVIGATION ENHANCED ========== */
+.nav {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 1rem 20px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+:root[data-theme="dark"] .nav {
+  background: rgba(23, 21, 15, 0.95) !important;
+}
+
+.nav .brand {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+}
+
+.nav-links a {
+  position: relative !important;
+}
+
+.nav-links a::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -4px !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 2px !important;
+  background: var(--accent) !important;
+  transition: width 0.3s ease !important;
+}
+
+.nav-links a:hover::after {
+  width: 100% !important;
+}
+
+.nav-ai-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 0.6rem 1.2rem !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.nav-ai-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(26, 67, 245, 0.3) !important;
+}
+
+.theme-toggle {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 8px !important;
+}
+
+.theme-toggle:hover {
+  transform: rotate(15deg) !important;
+}
+
+@media (max-width: 900px) {
+  .nav-links.active {
+    display: flex !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: var(--surface) !important;
+    padding: 2rem 20px !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  }
+}
+
+/* ========== HERO ENHANCED ========== */
+.hero {
+  padding: 6rem 0 !important;
+  background: linear-gradient(to bottom, var(--bg), var(--surface-2)) !important;
+}
+
+.hero-grid {
+  display: grid !important;
+  grid-template-columns: 1.1fr 0.9fr !important;
+  gap: 4rem !important;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.hero-sub {
+  font-size: 1.15rem !important;
+  line-height: 1.65 !important;
+  max-width: 540px !important;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .viewfinder {
+    order: -1 !important;
+    max-width: 400px !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-ctas {
+    flex-direction: column !important;
+  }
+  
+  .hero-ctas .btn {
+    width: 100% !important;
+  }
+}
+
+/* ========== WORKFLOW ENHANCED ========== */
+.workflow-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.5rem !important;
+}
+
+.workflow-step {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  padding: 2rem 1.5rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.workflow-step:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
+  border-color: var(--accent) !important;
+}
+
+.workflow-step-num {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+  color: #fff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 1.5rem !important;
+}
+
+@media (max-width: 1024px) {
+  .workflow-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .workflow-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* ========== FEATURES ENHANCED ========== */
+.features-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.75rem !important;
+}
+
+.feature:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1) !important;
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border)) !important;
+}
+
+.feature-icon {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, 
+    color-mix(in srgb, var(--accent) 15%, transparent),
+    color-mix(in srgb, var(--accent-2) 15%, transparent)
+  ) !important;
+}
+
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ========== CALENDAR FIXES ========== */
+.cal-stage-grid {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr !important;
+  gap: 2rem !important;
+}
+
+.cal-cell {
+  aspect-ratio: 1 !important;
+  min-height: 48px !important;
+  border-radius: 8px !important;
+}
+
+.cal-cell.has-event {
+  background: color-mix(in srgb, var(--accent) 20%, var(--surface)) !important;
+  color: var(--accent) !important;
+  border: 2px solid var(--accent) !important;
+}
+
+@media (max-width: 850px) {
+  .cal-stage-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ========== FAQ COMPLETELY REDESIGNED ========== */
+.faq-item {
+  border: 2px solid var(--border) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.3s cubic-bezier(0.16, 0.84, 0.44, 1) !important;
+}
+
+.faq-item:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border)) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+  transform: translateY(-2px) !important;
+}
+
+.faq-item.active {
+  border-color: var(--accent) !important;
+  background: color-mix(in srgb, var(--accent) 3%, var(--surface)) !important;
+  box-shadow: 0 12px 32px rgba(26, 67, 245, 0.15) !important;
+}
+
+.faq-trigger {
+  padding: 2rem 2.25rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  gap: 2rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.faq-trigger:hover {
+  color: var(--accent) !important;
+}
+
+.faq-item.active .faq-trigger {
+  color: var(--accent) !important;
+  padding-bottom: 1.25rem !important;
+}
+
+.faq-icon {
+  width: 36px !important;
+  height: 36px !important;
+  font-size: 1.6rem !important;
+  background: color-mix(in srgb, var(--ink) 6%, transparent) !important;
+  border-radius: 8px !important;
+  transition: all 0.4s cubic-bezier(0.16, 0.84, 0.44, 1) !important;
+}
+
+.faq-trigger:hover .faq-icon {
+  background: color-mix(in srgb, var(--accent) 15%, transparent) !important;
+  color: var(--accent) !important;
+  transform: rotate(180deg) !important;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg) !important;
+  color: #fff !important;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+  box-shadow: 0 4px 12px rgba(26, 67, 245, 0.3) !important;
+}
+
+.faq-panel {
+  max-height: 0 !important;
+  transition: max-height 0.4s cubic-bezier(0.16, 0.84, 0.44, 1), 
+              padding 0.4s ease !important;
+  padding: 0 2.25rem !important;
+}
+
+.faq-item.active .faq-panel {
+  max-height: 500px !important;
+  padding: 0 2.25rem 2rem !important;
+}
+
+.faq-panel p {
+  font-size: 1rem !important;
+  line-height: 1.75 !important;
+  color: var(--muted) !important;
+}
+
+@media (max-width: 640px) {
+  .faq-trigger {
+    padding: 1.5rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .faq-panel {
+    padding: 0 1.5rem !important;
+  }
+  
+  .faq-item.active .faq-panel {
+    padding: 0 1.5rem 1.5rem !important;
+  }
+}
+
+/* ========== BUTTONS & CONTACT ========== */
+.btn-primary:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 32px rgba(26, 67, 245, 0.4) !important;
+}
+
+.btn-secondary:hover {
+  background: var(--accent) !important;
+  color: #fff !important;
+  transform: translateY(-3px) !important;
+}
+
+.channel-btn {
+  padding: 1.5rem 2rem !important;
+  border-radius: 12px !important;
+  border: 2px solid var(--border) !important;
+  transition: all 0.3s ease !important;
+}
+
+.channel-btn:hover {
+  transform: translateY(-4px) !important;
+  border-color: var(--accent) !important;
+}
+
+.channel-btn.primary-channel {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+  color: #fff !important;
+}
+
+.contact-fab a:hover {
+  transform: scale(1.15) !important;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+  color: #fff !important;
+}
+
+/* ========== UTILITIES ========== */
+@media (max-width: 640px) {
+  button, .btn, .tab-btn, .faq-trigger {
+    min-height: 44px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* END OF REDESIGN */

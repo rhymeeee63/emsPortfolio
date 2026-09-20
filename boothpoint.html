@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="boothpoint.css">
+<link rel="stylesheet" href="boothpoint-consolidated.css">
 </head>
 <body>
 
@@ -17,15 +17,26 @@
 <nav class="nav">
   <a href="#" class="brand">Booth<em>Point</em><span class="by">RTS</span></a>
   <div class="nav-links">
+    <a href="#workflow">Workflow</a>
     <a href="#features">Features</a>
     <a href="#preview">Preview</a>
+    <a href="#calculator">Savings</a>
     <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
   </div>
   <div class="nav-right">
+    <button class="nav-ai-btn" id="navAiBtn" type="button" aria-label="Open AI Assistant">
+      <span class="sparkle">✨</span> AI Chat
+    </button>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">
       <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
       <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
     <a href="#contact" class="btn btn-primary btn-sm">Book a Demo</a>
   </div>
@@ -56,6 +67,54 @@
     </div>
   </div>
 </header>
+
+<section id="workflow" class="workflow-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">Seamless Pipeline</p>
+      <h2>Run your studio. Every step connected.</h2>
+      <p>From initial inquiry to final gallery delivery, everything moves in one continuous workflow without spreadsheets or duct-taped apps.</p>
+    </div>
+
+    <div class="workflow-grid stagger">
+      <div class="workflow-card reveal">
+        <div class="workflow-step-num mono">01</div>
+        <div class="workflow-content">
+          <h3>Inquiries &amp; Bookings</h3>
+          <p>Capture client inquiries, auto-block calendar slots, and prevent double-booking across multi-crew events.</p>
+        </div>
+        <div class="workflow-pill"><span>&#9679;</span> Realtime Slot Lock</div>
+      </div>
+
+      <div class="workflow-card reveal">
+        <div class="workflow-step-num mono">02</div>
+        <div class="workflow-content">
+          <h3>Deposits &amp; Invoices</h3>
+          <p>Instantly generate PDF quotes, balance reminders, and secure deposit confirmations without extra tools.</p>
+        </div>
+        <div class="workflow-pill"><span>&#9679;</span> Auto PDF Generation</div>
+      </div>
+
+      <div class="workflow-card reveal">
+        <div class="workflow-step-num mono">03</div>
+        <div class="workflow-content">
+          <h3>Staff &amp; Equipment</h3>
+          <p>Assign lead shooters, photobooth operators, calculate team payouts, and reserve camera/print gear.</p>
+        </div>
+        <div class="workflow-pill"><span>&#9679;</span> Dispatch &amp; Gear Check</div>
+      </div>
+
+      <div class="workflow-card reveal">
+        <div class="workflow-step-num mono">04</div>
+        <div class="workflow-content">
+          <h3>Client Tracker &amp; Delivery</h3>
+          <p>Clients follow real-time progress through a dedicated branded link &mdash; no login or app install needed.</p>
+        </div>
+        <div class="workflow-pill"><span>&#9679;</span> Zero-Login Tracker</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="features">
   <div class="wrap">
@@ -125,68 +184,353 @@
 <section id="preview" style="background:var(--surface-2); border-block:1px solid var(--border);">
   <div class="wrap">
     <div class="section-head">
-      <p class="tag">See it in action</p>
-      <h2>A quick look inside.</h2>
-      <p>Illustrative previews &mdash; your real bookings, calendar, and branding replace these once it's installed.</p>
+      <p class="tag">Interactive Tour</p>
+      <h2>Explore BoothPoint's core interface.</h2>
+      <p>Switch tabs to preview the actual admin dashboard, conflict-free calendar, instant PDF billing, public client tracker, and white-label engine.</p>
     </div>
-    <div class="preview-grid stagger">
 
-      <div class="frame reveal">
-        <div class="frame-bar">
-          <div class="frame-dots"><span></span><span></span><span></span></div>
-          <div class="frame-url">yourstudio.com/admin/bookings</div>
+    <div class="preview-tabs-nav">
+      <button class="tab-btn active" data-tab="dashboard" type="button">Admin Dashboard</button>
+      <button class="tab-btn" data-tab="calendar" type="button">Booking Calendar</button>
+      <button class="tab-btn" data-tab="invoices" type="button">PDF Invoices</button>
+      <button class="tab-btn" data-tab="tracker" type="button">Client Tracker</button>
+      <button class="tab-btn" data-tab="brand" type="button">Brand Engine</button>
+      <button class="tab-btn" data-tab="ai" type="button"><span style="color:var(--flash);">✨</span> AI Studio Copilot</button>
+    </div>
+
+    <div class="preview-stage reveal">
+      <div class="stage-topbar">
+        <div class="frame-dots"><span></span><span></span><span></span></div>
+        <div class="stage-url" id="stageUrl">yourstudio.com/admin/dashboard</div>
+        <span class="frame-badge" id="stageBadge">Live Sync &bull; v2.4</span>
+      </div>
+      <div class="stage-content">
+
+        <!-- Tab 1: Dashboard -->
+        <div class="tab-pane active" id="pane-dashboard">
+          <div class="dash-grid">
+            <div class="dash-stat">
+              <div class="dash-stat-lbl">Monthly Bookings</div>
+              <div class="dash-stat-val">28 Events</div>
+              <div class="dash-stat-trend">&#8593; +18% vs last mo</div>
+            </div>
+            <div class="dash-stat">
+              <div class="dash-stat-lbl">Gross Revenue</div>
+              <div class="dash-stat-val">&#8369;142,500</div>
+              <div class="dash-stat-trend">&#8593; 100% retained</div>
+            </div>
+            <div class="dash-stat">
+              <div class="dash-stat-lbl">Pending Balances</div>
+              <div class="dash-stat-val">&#8369;34,000</div>
+              <div class="dash-stat-trend" style="color:#f59e0b;">6 invoices due</div>
+            </div>
+            <div class="dash-stat">
+              <div class="dash-stat-lbl">Active Crew</div>
+              <div class="dash-stat-val">8 Staff</div>
+              <div class="dash-stat-trend">All assigned</div>
+            </div>
+          </div>
+          <div class="dash-main-cols">
+            <div class="dash-chart-card">
+              <div class="dash-card-title">
+                <span>Event Velocity &bull; 2026</span>
+                <span style="font-size:.65rem; color:var(--muted);">Booked vs Completed</span>
+              </div>
+              <div class="chart-bars">
+                <div class="chart-col"><div class="chart-bar-fill" style="height:45%;"></div><span class="chart-bar-lbl">Jun</span></div>
+                <div class="chart-col"><div class="chart-bar-fill" style="height:60%;"></div><span class="chart-bar-lbl">Jul</span></div>
+                <div class="chart-col"><div class="chart-bar-fill" style="height:80%;"></div><span class="chart-bar-lbl">Aug</span></div>
+                <div class="chart-col"><div class="chart-bar-fill" style="height:95%;"></div><span class="chart-bar-lbl">Sep</span></div>
+                <div class="chart-col"><div class="chart-bar-fill" style="height:100%;"></div><span class="chart-bar-lbl">Oct</span></div>
+                <div class="chart-col"><div class="chart-bar-fill" style="height:70%;"></div><span class="chart-bar-lbl">Nov</span></div>
+              </div>
+            </div>
+            <div class="dash-recent-card">
+              <div class="dash-card-title">
+                <span>Recent Studio Feeds</span>
+                <span style="color:var(--good);">&#9679; Realtime</span>
+              </div>
+              <div class="recent-event-item">
+                <div class="event-info"><strong>Reyes Wedding</strong><span>Photobooth + 360 Spin</span></div>
+                <span class="event-badge paid">&#8369;9,000 Paid</span>
+              </div>
+              <div class="recent-event-item">
+                <div class="event-info"><strong>Alvarez Debut</strong><span>Glamour Mirror Booth</span></div>
+                <span class="event-badge pending">Deposit Due</span>
+              </div>
+              <div class="recent-event-item">
+                <div class="event-info"><strong>TechSummit Gala</strong><span>Corporate Strip Station</span></div>
+                <span class="event-badge paid">&#8369;15,500 Paid</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="frame-body">
-          <p class="frame-label">Booking Calendar</p>
-          <div class="mini-cal" aria-hidden="true">
-            <span></span><span></span><span class="booked"></span><span></span><span></span><span class="flash"></span><span></span>
-            <span></span><span class="booked"></span><span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span class="booked"></span><span></span><span></span><span></span>
+
+        <!-- Tab 2: Calendar -->
+        <div class="tab-pane" id="pane-calendar">
+          <div class="cal-stage-grid">
+            <div class="cal-matrix">
+              <div class="cal-month-head">
+                <strong>October 2026 Schedule</strong>
+                <span style="color:var(--muted); font-size:.7rem;">Auto Timezone Sync</span>
+              </div>
+              <div class="cal-grid-days">
+                <div class="cal-day-label">M</div><div class="cal-day-label">T</div><div class="cal-day-label">W</div><div class="cal-day-label">T</div><div class="cal-day-label">F</div><div class="cal-day-label">S</div><div class="cal-day-label">S</div>
+                <div class="cal-cell">1</div><div class="cal-cell">2</div><div class="cal-cell has-event">3</div><div class="cal-cell">4</div><div class="cal-cell">5</div><div class="cal-cell">6</div><div class="cal-cell">7</div>
+                <div class="cal-cell">8</div><div class="cal-cell">9</div><div class="cal-cell has-event">10</div><div class="cal-cell">11</div><div class="cal-cell conflict-shield">12</div><div class="cal-cell">13</div><div class="cal-cell">14</div>
+                <div class="cal-cell">15</div><div class="cal-cell">16</div><div class="cal-cell">17</div><div class="cal-cell has-event">18</div><div class="cal-cell">19</div><div class="cal-cell">20</div><div class="cal-cell">21</div>
+              </div>
+            </div>
+            <div class="cal-event-detail">
+              <div>
+                <div class="cal-shield-banner">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span>Double-Booking Shield Active</span>
+                </div>
+                <h4 style="font-family:'Fraunces',serif; font-size:1.05rem; color:var(--ink); margin-bottom:.3rem;">October 12 &bull; Prime Slot Locked</h4>
+                <p style="font-size:.8rem; color:var(--muted); line-height:1.45;">Booth #1 &amp; #2 committed to Reyes Wedding. System automatically rejects overlapping requests for the same time window.</p>
+              </div>
+              <div style="margin-top:1rem; padding-top:1rem; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+                <span class="mono" style="font-size:.75rem; color:var(--muted);">Assigned: Mark R. + Bea T.</span>
+                <span class="mock-pill">&#10003; Confirmed</span>
+              </div>
+            </div>
           </div>
-          <div class="mock-card">
-            <strong>Reyes Wedding &mdash; Oct 12</strong>
-            Full Package + Photobooth
-            <span class="mock-pill">+ &#8369;9,000 deposit paid</span>
+        </div>
+
+        <!-- Tab 3: Invoicing -->
+        <div class="tab-pane" id="pane-invoices">
+          <div class="invoice-mock-box">
+            <div class="inv-top">
+              <div class="inv-brand">
+                <strong>YOUR PHOTOBOOTH STUDIO</strong>
+                <span>Official Statement of Account</span>
+              </div>
+              <div class="inv-meta">
+                <div>INV-2026-0894</div>
+                <div>Date: Oct 12, 2026</div>
+              </div>
+            </div>
+            <table class="inv-items">
+              <thead><tr><th>Item &amp; Description</th><th>Qty</th><th>Amount</th></tr></thead>
+              <tbody>
+                <tr><td>3-Hour Unlimited Magnet Photobooth</td><td>1</td><td>&#8369;8,500.00</td></tr>
+                <tr><td>Custom Acrylic Backdrop &amp; Print Template</td><td>1</td><td>&#8369;2,500.00</td></tr>
+                <tr><td>Live Glam Filter + Instant AirDrop Station</td><td>1</td><td>&#8369;1,500.00</td></tr>
+              </tbody>
+            </table>
+            <div class="inv-totals">
+              <div class="inv-qr-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                <span>GCash / Maya QR Attached</span>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-family:'IBM Plex Mono',monospace; font-size:.75rem; color:var(--muted);">Total: &#8369;12,500.00</div>
+                <div style="font-family:'Fraunces',serif; font-size:1.25rem; font-weight:700; color:var(--good);">&#8369;5,000 Deposit Paid</div>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <!-- Tab 4: Tracker -->
+        <div class="tab-pane" id="pane-tracker">
+          <div class="tracker-preview-box">
+            <div class="tracker-head">
+              <div class="tracker-title">
+                <h4 style="font-size:1rem; font-family:'Fraunces',serif;">Booking #BK-2026-0142 &bull; Reyes Wedding</h4>
+                <p style="font-size:.72rem; color:var(--muted); font-family:'IBM Plex Mono',monospace;">Public Client Live Tracking Portal &mdash; Zero Login Needed</p>
+              </div>
+              <span class="frame-badge">Client View</span>
+            </div>
+            <div class="tracker-timeline">
+              <div class="tracker-step-row completed">
+                <div class="tracker-step-icon">&#10003;</div>
+                <div class="tracker-step-info"><strong>1. Inquiry &amp; Date Lock</strong><span>Sep 02 &bull; Slot secured with initial details</span></div>
+              </div>
+              <div class="tracker-step-row completed">
+                <div class="tracker-step-icon">&#10003;</div>
+                <div class="tracker-step-info"><strong>2. Deposit Verified</strong><span>Sep 05 &bull; Official e-Receipt issued via GCash</span></div>
+              </div>
+              <div class="tracker-step-row completed">
+                <div class="tracker-step-icon">&#10003;</div>
+                <div class="tracker-step-info"><strong>3. Template Artwork Approved</strong><span>Sep 20 &bull; Customized with couple's monogram</span></div>
+              </div>
+              <div class="tracker-step-row active">
+                <div class="tracker-step-icon">&#9679;</div>
+                <div class="tracker-step-info"><strong>4. Event Day Setup &amp; Shoot</strong><span>Oct 12 &bull; On-site team arriving 2 hrs prior to reception</span></div>
+              </div>
+              <div class="tracker-step-row">
+                <div class="tracker-step-icon">5</div>
+                <div class="tracker-step-info"><strong style="color:var(--muted);">5. Online High-Res Gallery Delivery</strong><span style="color:var(--muted);">Scheduled within 24 hours after event</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 5: Brand Engine -->
+        <div class="tab-pane" id="pane-brand">
+          <div class="brand-engine-grid">
+            <div class="brand-live-preview" id="liveBrandPreview">
+              <div class="live-studio-logo" id="previewStudioName">LUMEN PHOTO STUDIO</div>
+              <p class="live-studio-tagline">Premium Wedding &amp; Event Photobooths</p>
+              <button class="live-demo-btn" id="previewBtnAccent" type="button">Book Your Event Date &rarr;</button>
+            </div>
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:8px; padding:1.2rem;">
+              <h5 style="font-family:'IBM Plex Mono',monospace; font-size:.76rem; color:var(--ink); margin-bottom:.8rem;">Interactive Color Customizer</h5>
+              <p style="font-size:.75rem; color:var(--muted); margin-bottom:1rem;">Pick a color swatch to test how BoothPoint instantly re-themes to match your studio identity:</p>
+              <div class="mock-swatches" id="brandSwatches">
+                <i style="background:#1a43f5;" data-color="#1a43f5" title="Cobalt Blue"></i>
+                <i style="background:#7b2ff7;" data-color="#7b2ff7" title="Electric Violet"></i>
+                <i style="background:#c9601a;" data-color="#c9601a" title="Warm Amber"></i>
+                <i style="background:#15803d;" data-color="#15803d" title="Emerald Green"></i>
+                <i style="background:#e11d48;" data-color="#e11d48" title="Rose Gold"></i>
+              </div>
+              <div style="margin-top:1.2rem; font-family:'IBM Plex Mono',monospace; font-size:.68rem; color:var(--muted);">
+                &bull; 100% White-Label: No "Powered by RTS" badges on your client-facing pages.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 6: AI Studio Copilot -->
+        <div class="tab-pane" id="pane-ai">
+          <div class="ai-tab-grid">
+            <div class="ai-tab-mock">
+              <div class="ai-mock-header">
+                <div class="ai-mock-bot-info">
+                  <div class="ai-mock-avatar">✨</div>
+                  <div>
+                    <strong style="display:block; font-size:.86rem; color:var(--ink); font-family:'Fraunces',serif;">BoothPoint Studio Intelligence</strong>
+                    <span style="font-size:.7rem; color:var(--muted); font-family:'IBM Plex Mono',monospace;">Autonomous Inquiry &amp; Booking Assistant</span>
+                  </div>
+                </div>
+                <span class="frame-badge">Online &bull; 24/7 Agent</span>
+              </div>
+              <div class="ai-mock-chat">
+                <div class="ai-mock-msg user">
+                  <span class="ai-msg-tag">Client Inquiry via Website</span>
+                  <p>&ldquo;Available po ba kayo sa Dec 18 for a 3-hr Wedding Photobooth in Tagaytay? Magkano po package with 360 spin?&rdquo;</p>
+                </div>
+                <div class="ai-mock-msg bot">
+                  <div class="ai-pill-action">&#9679; Calendar Checked: Dec 18 Available (Crew Slot #2 Open)</div>
+                  <p><strong>Auto-Draft Response Generated:</strong><br>&ldquo;Hi Ma'am! Yes, Dec 18 is open! Our 3-Hour Unlimited Photobooth + 360 Video Spin package is &#8369;14,500 (includes custom template artwork, props &amp; live AirDrop station). Shall we secure your date with a 30% deposit?&rdquo;</p>
+                  <div class="ai-mock-btns">
+                    <span class="ai-mock-btn-tag">&#10003; 1-Click Send via WhatsApp</span>
+                    <span class="ai-mock-btn-tag">&#128196; Auto-Create Quote PDF</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ai-tab-sidebar">
+              <h5 style="font-family:'Fraunces',serif; font-size:1.05rem; margin-bottom:.5rem;">Autonomous Studio Concierge</h5>
+              <p style="font-size:.82rem; color:var(--muted); line-height:1.55; margin-bottom:1rem;">BoothPoint's smart engine parses client venue requests, verifies multi-crew calendar capacity, and prepares ready-to-send quotes instantly.</p>
+              <div class="ai-feature-list">
+                <div class="ai-feature-item">
+                  <span class="ai-check">&#10003;</span> Tagalog &amp; English bilingual inquiry comprehension
+                </div>
+                <div class="ai-feature-item">
+                  <span class="ai-check">&#10003;</span> Realtime slot lock &amp; conflict-free quote generation
+                </div>
+                <div class="ai-feature-item">
+                  <span class="ai-check">&#10003;</span> Auto-attaches GCash / Maya payment deposit links
+                </div>
+              </div>
+              <button class="btn btn-primary btn-sm" id="tabLaunchAiBtn" type="button" style="margin-top:1.2rem; width:100%;">
+                ✨ Launch Interactive AI Assistant
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="architecture" class="trust-section">
+  <div class="wrap">
+    <div class="trust-box reveal">
+      <div class="trust-header">
+        <p class="tag">Studio Sovereignty</p>
+        <h3>Self-hosted architecture. Zero vendor lock-in.</h3>
+        <p>Your client list, financial earnings, and event records stay 100% in your private database. Never held hostage by monthly price hikes or third-party server outages.</p>
+      </div>
+      <div class="trust-metrics stagger">
+        <div class="trust-metric-card reveal">
+          <div class="trust-metric-val mono">100%</div>
+          <div class="trust-metric-title">Data Privacy &amp; Control</div>
+          <div class="trust-metric-desc">Installed directly on your MySQL server. Nobody else accesses your client data.</div>
+        </div>
+        <div class="trust-metric-card reveal">
+          <div class="trust-metric-val mono">0%</div>
+          <div class="trust-metric-title">Zero Take-Rate Fees</div>
+          <div class="trust-metric-desc">Keep 100% of every booking, balance, and photobooth package payment.</div>
+        </div>
+        <div class="trust-metric-card reveal">
+          <div class="trust-metric-val mono">&lt; 150ms</div>
+          <div class="trust-metric-title">Ultra-Fast Loading</div>
+          <div class="trust-metric-desc">Lightweight native PHP/HTML engine without heavy Node runtimes or bloat.</div>
+        </div>
+        <div class="trust-metric-card reveal">
+          <div class="trust-metric-val mono">&infin;</div>
+          <div class="trust-metric-title">Unlimited Records</div>
+          <div class="trust-metric-desc">No paywalls on total bookings, customer contacts, or invoice PDF generation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calculator" class="calc-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">Studio ROI Engine</p>
+      <h2>Calculate your real savings vs SaaS rentals.</h2>
+      <p>Typical SaaS tools charge $49&ndash;$149 every single month plus credit card fees. See how much you keep with BoothPoint.</p>
+    </div>
+
+    <div class="calc-card reveal">
+      <div>
+        <div class="calc-control">
+          <div class="calc-label-row">
+            <span class="calc-label">Monthly Bookings</span>
+            <span class="calc-value-pill" id="calcBookingVal">12 events / mo</span>
+          </div>
+          <input type="range" min="3" max="50" value="12" class="calc-range" id="calcBookingRange" aria-label="Monthly Bookings">
+        </div>
+
+        <div class="calc-control">
+          <div class="calc-label-row">
+            <span class="calc-label">Average Package Price</span>
+            <span class="calc-value-pill" id="calcPriceVal">&#8369;8,500 / event</span>
+          </div>
+          <input type="range" min="3000" max="25000" step="500" value="8500" class="calc-range" id="calcPriceRange" aria-label="Average Package Price">
+        </div>
+
+        <div class="calc-control">
+          <div class="calc-label-row">
+            <span class="calc-label">Years in Business</span>
+            <span class="calc-value-pill" id="calcYearsVal">3 Years</span>
+          </div>
+          <input type="range" min="1" max="5" value="3" class="calc-range" id="calcYearsRange" aria-label="Years in Business">
         </div>
       </div>
 
-      <div class="frame reveal">
-        <div class="frame-bar">
-          <div class="frame-dots"><span></span><span></span><span></span></div>
-          <div class="frame-url">yourstudio.com/track/BK-2026-0142</div>
-        </div>
-        <div class="frame-body">
-          <p class="frame-label">Public Booking Tracker</p>
-          <div class="mock-track">
-            <div class="mock-step done"><div class="mock-step-dot">+</div><div><div class="mock-step-label">Inquiry Received</div><div class="mock-step-sub">SEP 02</div></div></div>
-            <div class="mock-step done"><div class="mock-step-dot">+</div><div><div class="mock-step-label">Confirmed</div><div class="mock-step-sub">SEP 04</div></div></div>
-            <div class="mock-step done"><div class="mock-step-dot">+</div><div><div class="mock-step-label">Deposit Paid</div><div class="mock-step-sub">SEP 05</div></div></div>
-            <div class="mock-step current"><div class="mock-step-dot">&#9679;</div><div><div class="mock-step-label">Event Day</div><div class="mock-step-sub">OCT 12</div></div></div>
-            <div class="mock-step"><div class="mock-step-dot"></div><div><div class="mock-step-label" style="color:var(--muted);">Gallery Delivered</div></div></div>
+      <div class="calc-result-box">
+        <div class="calc-result-lbl">Estimated Total Savings</div>
+        <div class="calc-savings-number" id="calcSavingsTotal">&#8369;145,000</div>
+        <p class="calc-result-sub">Zero recurring subscriptions + 0% booking take-rate kept in your studio account.</p>
+        <div class="calc-breakdown">
+          <div class="calc-breakdown-item">
+            <span>BoothPoint Cost</span>
+            <strong id="calcBpCost">&#8369;13,000 once</strong>
+          </div>
+          <div class="calc-breakdown-item">
+            <span>SaaS Rental Cost</span>
+            <strong id="calcSaasCost" style="color:#ef4444;">&#8369;158,000+</strong>
           </div>
         </div>
       </div>
-
-      <div class="frame reveal">
-        <div class="frame-bar">
-          <div class="frame-dots"><span></span><span></span><span></span></div>
-          <div class="frame-url">yourstudio.com/admin/settings</div>
-        </div>
-        <div class="frame-body">
-          <p class="frame-label">Branding &amp; Layout</p>
-          <div class="mock-layouts">
-            <div class="mock-layout"><div class="mock-layout-vis split"></div><span>SPLIT</span></div>
-            <div class="mock-layout active"><div class="mock-layout-vis centered"></div><span>CENTER</span></div>
-            <div class="mock-layout"><div class="mock-layout-vis fullbleed"></div><span>FULL</span></div>
-          </div>
-          <p class="frame-label" style="margin-bottom:.6rem;">Brand Palette</p>
-          <div class="mock-swatches" aria-hidden="true">
-            <i style="background:#1a43f5;"></i><i style="background:#7b2ff7;"></i><i style="background:#c9601a;"></i><i style="background:#15803d;"></i>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -323,17 +667,159 @@
     </div>
   </div>
 </section>
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">Studio Endorsements</p>
+      <h2>Trusted by photobooth professionals.</h2>
+      <p>Hear from active studio owners who made the switch to self-hosted simplicity.</p>
+    </div>
+
+    <div class="testimonials-grid stagger">
+      <div class="test-card reveal">
+        <div>
+          <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="test-quote">&ldquo;We used to pay almost &#8369;6,000 every single month for a cloud SaaS that still lacked basic PH peso invoice formatting. BoothPoint paid for itself within two weekend events.&rdquo;</p>
+        </div>
+        <div class="test-author">
+          <div class="test-avatar">MR</div>
+          <div class="test-meta">
+            <strong>Mark Ramirez</strong>
+            <span>Owner, SnapCore 360 &bull; Manila</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card reveal">
+        <div>
+          <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="test-quote">&ldquo;The public booking tracker link changed everything. Clients stop DMing us constantly asking 'na-receive niyo na po ba yung downpayment?' because they can see the live checkmarks.&rdquo;</p>
+        </div>
+        <div class="test-author">
+          <div class="test-avatar">CA</div>
+          <div class="test-meta">
+            <strong>Clarissa Alvarez</strong>
+            <span>Lead Planner, Lumin Studio &bull; Cebu</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card reveal">
+        <div>
+          <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="test-quote">&ldquo;Double-booking prevention is bulletproof. Juggling 3 simultaneous photobooth units during December peak season went from sheer panic to completely automated bliss.&rdquo;</p>
+        </div>
+        <div class="test-author">
+          <div class="test-avatar">DT</div>
+          <div class="test-meta">
+            <strong>Danilo Tan</strong>
+            <span>Operations Head, FlashBox Events &bull; Davao</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:var(--surface-2); border-block:1px solid var(--border);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">Got Questions?</p>
+      <h2>Frequently asked questions.</h2>
+      <p>Everything you need to know about self-hosting, licenses, updates, and setup.</p>
+    </div>
+
+    <div class="faq-wrap reveal">
+      <div class="faq-list">
+        <div class="faq-item active">
+          <button class="faq-trigger" type="button">
+            <span>What do I need to run BoothPoint on my own hosting?</span>
+            <span class="faq-icon">&#9662;</span>
+          </button>
+          <div class="faq-panel">
+            <p>Any standard web hosting with PHP 8.0+ and MySQL (such as Hostinger, Namecheap, cPanel, or SiteGround). If you can run a basic WordPress site, BoothPoint will run effortlessly and ultra-fast.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button">
+            <span>Is there really zero recurring monthly or yearly subscription?</span>
+            <span class="faq-icon">&#9662;</span>
+          </button>
+          <div class="faq-panel">
+            <p>Yes. You pay once for the perpetual software license. The software belongs to you and runs on your private server forever without mandatory renewal fees.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button">
+            <span>Can I customize the client-facing booking page with my branding?</span>
+            <span class="faq-icon">&#9662;</span>
+          </button>
+          <div class="faq-panel">
+            <p>Absolutely. You can upload your studio logo, set custom brand colors, customize your packages, add-on options, and terms of service. Clients will only see your brand identity.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button">
+            <span>What if I don't know how to install it on my cPanel/server?</span>
+            <span class="faq-icon">&#9662;</span>
+          </button>
+          <div class="faq-panel">
+            <p>We offer a 1-on-1 Guided Installation Add-on (or free with the Business tier). We will connect to your hosting, set up the database, test email delivery, and hand you the live admin credentials.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button">
+            <span>How do future updates and bug fixes work?</span>
+            <span class="faq-icon">&#9662;</span>
+          </button>
+          <div class="faq-panel">
+            <p>Minor security patches and bug fixes are included. Optional annual feature upgrades can be renewed for &#8369;2,500/year, but your existing install continues to function indefinitely even if you never renew.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section id="contact">
   <div class="wrap">
     <div class="final-cta reveal">
       <div>
+        <p class="tag">Get Started Today</p>
         <h2>Ready to stop juggling spreadsheets?</h2>
-        <p>Tell us about your studio &mdash; team size, how you book events now &mdash; and we'll show you BoothPoint running with your own name on it.</p>
-        <p class="note">RHYMETECHSYSTEMS@GMAIL.COM &middot; REPLIES WITHIN 1 BUSINESS DAY</p>
+        <p>Tell us about your studio &mdash; team size, how you book events now &mdash; and we'll show you BoothPoint running with your branding and packages loaded.</p>
+        <div class="cta-badge">
+          <span class="cta-badge-dot"></span>
+          <span>Typical response time: under 2 hours</span>
+        </div>
       </div>
-      <div class="final-cta-actions">
-        <a href="mailto:rhymetechsystems@gmail.com?subject=BoothPoint%20Demo%20Request" class="btn btn-primary">Email RTS</a>
+      <div class="final-cta-channels">
+        <a href="mailto:rhymetechsystems@gmail.com?subject=BoothPoint%20Demo%20Request" class="channel-btn primary-channel">
+          <div class="channel-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 6.5 9 6.5 9-6.5"/></svg>
+            <span>Email RTS Direct</span>
+          </div>
+          <span class="channel-tag">rhymetechsystems@gmail.com &rarr;</span>
+        </a>
+        <a href="https://www.facebook.com/rimenomis63/" target="_blank" rel="noopener noreferrer" class="channel-btn">
+          <div class="channel-left">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.15 2 11.3c0 2.94 1.47 5.56 3.77 7.28V22l3.44-1.89c.9.25 1.85.39 2.79.39 5.5 0 10-4.15 10-9.3S17.5 2 12 2Zm1.01 12.53-2.55-2.72-4.98 2.72 5.48-5.82 2.61 2.72 4.92-2.72-5.48 5.82Z"/></svg>
+            <span>Chat via Facebook Messenger</span>
+          </div>
+          <span class="channel-tag">Fast Reply &rarr;</span>
+        </a>
+        <a href="tel:+971522596095" class="channel-btn">
+          <div class="channel-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L7.9 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+            <span>Direct Call / WhatsApp</span>
+          </div>
+          <span class="channel-tag">+971 52 259 6095 &rarr;</span>
+        </a>
       </div>
     </div>
   </div>
@@ -347,15 +833,168 @@
 </footer>
 
 <div class="contact-fab">
-  <a href="https://www.facebook.com/rimenomis63/" target="_blank" rel="noopener noreferrer" aria-label="Message us on Facebook">
+  <a href="https://www.facebook.com/rimenomis63/" target="_blank" rel="noopener noreferrer" aria-label="Message us on Facebook" title="Facebook Messenger">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.15 2 11.3c0 2.94 1.47 5.56 3.77 7.28V22l3.44-1.89c.9.25 1.85.39 2.79.39 5.5 0 10-4.15 10-9.3S17.5 2 12 2Zm1.01 12.53-2.55-2.72-4.98 2.72 5.48-5.82 2.61 2.72 4.92-2.72-5.48 5.82Z"/></svg>
   </a>
-  <a href="tel:+971522596095" aria-label="Call us">
+  <a href="tel:+971522596095" aria-label="Call us" title="Direct Phone / WhatsApp">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L7.9 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
   </a>
-  <a href="mailto:rhymetechsystems@gmail.com" aria-label="Email us">
+  <a href="mailto:rhymetechsystems@gmail.com" aria-label="Email us" title="Email RTS Direct">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 6.5 9 6.5 9-6.5"/></svg>
   </a>
+</div>
+
+<!-- ================= Floating AI Assistant Widget ================= -->
+<div class="bp-ai-wrapper" id="bpAiWrapper">
+  <!-- AI Chat Dock Panel -->
+  <div class="bp-ai-dock" id="bpAiDock" role="dialog" aria-label="BoothPoint AI Studio Assistant" aria-modal="true" aria-hidden="true">
+    
+    <!-- Top Header -->
+    <div class="bp-ai-head">
+      <div class="bp-ai-head-left">
+        <button class="bp-ai-back-btn" id="bpAiBackBtn" type="button" title="Back to Menu" aria-label="Back to menu" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <div class="bp-ai-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          <span class="bp-ai-status-dot"></span>
+        </div>
+        <div class="bp-ai-title-wrap">
+          <div class="bp-ai-title">BoothPoint AI</div>
+          <div class="bp-ai-subtitle">Your friendly AI assistant who will guide you...</div>
+        </div>
+      </div>
+      <div class="bp-ai-head-actions">
+        <div class="bp-ai-menu-wrap">
+          <button class="bp-ai-action-btn" id="bpAiMenuBtn" type="button" title="More Options" aria-label="More options">
+            <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="5" cy="12" r="2"/></svg>
+          </button>
+          <div class="bp-ai-dropdown" id="bpAiDropdown" style="display:none;">
+            <button type="button" class="bp-ai-drop-item" id="bpAiDropRestart">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              <span>Restart Chat</span>
+            </button>
+            <button type="button" class="bp-ai-drop-item" id="bpAiDropClear">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              <span>Clear History</span>
+            </button>
+            <div class="bp-ai-drop-divider"></div>
+            <a href="https://www.facebook.com/rimenomis63/" target="_blank" rel="noopener noreferrer" class="bp-ai-drop-item">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.15 2 11.3c0 2.94 1.47 5.58 3.75 7.27V22l3.32-1.84c.94.26 1.93.41 2.93.41 5.5 0 10-4.15 10-9.3S17.5 2 12 2Z"/></svg>
+              <span>Direct RTS Messenger</span>
+            </a>
+            <a href="https://wa.me/971522596095" target="_blank" rel="noopener noreferrer" class="bp-ai-drop-item">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.476-.15-.677.15-.2.3-.777.98-.952 1.18-.175.2-.351.226-.652.075-.301-.15-1.272-.469-2.423-1.496-.895-.798-1.5-1.784-1.675-2.085-.176-.301-.019-.464.132-.614.135-.134.301-.351.451-.527.15-.175.2-.301.301-.501.1-.2.05-.376-.025-.526-.075-.15-.677-1.632-.927-2.235-.244-.588-.493-.508-.677-.518-.175-.008-.376-.01-.577-.01-.2 0-.526.075-.802.376s-1.053 1.028-1.053 2.507c0 1.479 1.077 2.908 1.228 3.109.15.2 2.12 3.237 5.136 4.54.717.311 1.277.496 1.713.635.72.229 1.375.197 1.893.12.577-.087 1.78-.727 2.03-1.429.251-.702.251-1.304.176-1.429-.075-.126-.276-.201-.577-.352Z"/></svg>
+              <span>Direct WhatsApp Chat</span>
+            </a>
+          </div>
+        </div>
+        <button class="bp-ai-action-btn" id="bpAiCloseBtn" type="button" title="Minimize Chat" aria-label="Close chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Main Content Area -->
+    <div class="bp-ai-body" id="bpAiBody">
+      <!-- Home View (Starting Point Cards) -->
+      <div class="bp-ai-home-view" id="bpAiHomeView">
+        <div class="bp-ai-home-hero">
+          <h3 class="bp-ai-hero-title">Good day bossing, how can we help?</h3>
+          <p class="bp-ai-hero-sub">Tap a starting point or ask in your own words.</p>
+        </div>
+
+        <div class="bp-ai-cards-list">
+          <button type="button" class="bp-ai-card" data-action="plan" data-prompt="Help me choose the right plan for my studio. Magkano ang Starter vs Pro vs Business?">
+            <div class="bp-ai-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            </div>
+            <div class="bp-ai-card-label">Help Me Choose a Plan</div>
+            <svg class="bp-ai-card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+
+          <button type="button" class="bp-ai-card" data-action="demo" data-prompt="Gusto ko mag-book ng free live demo para makita ang BoothPoint software.">
+            <div class="bp-ai-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="bp-ai-card-label">Book a Free Demo</div>
+            <svg class="bp-ai-card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+
+          <button type="button" class="bp-ai-card" data-action="quote" data-prompt="Request a custom pricing quote and compute my ROI savings compared to monthly SaaS.">
+            <div class="bp-ai-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/><circle cx="12" cy="14" r="2"/></svg>
+            </div>
+            <div class="bp-ai-card-label">Request a Pricing Quote</div>
+            <svg class="bp-ai-card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+
+          <button type="button" class="bp-ai-card" data-action="support" data-prompt="Paano i-install at i-setup ang BoothPoint sa cPanel server at ano ang requirements?">
+            <div class="bp-ai-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <div class="bp-ai-card-label">Get Technical Support</div>
+            <svg class="bp-ai-card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Conversation Chat View -->
+      <div class="bp-ai-chat-view" id="bpAiChatView" style="display:none;">
+        <div class="bp-ai-messages" id="bpAiMessages"></div>
+        <div class="bp-ai-typing" id="bpAiTyping" style="display:none;">
+          <div class="bp-ai-msg-avatar">✨</div>
+          <div class="bp-ai-typing-bubble"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Input Area -->
+    <div class="bp-ai-bottom">
+      <form class="bp-ai-input-form" id="bpAiForm">
+        <div class="bp-ai-input-box">
+          <textarea id="bpAiInput" class="bp-ai-textarea" rows="1" placeholder="Type your message..." autocomplete="off" maxlength="500"></textarea>
+          
+          <div class="bp-ai-input-toolbar">
+            <div class="bp-ai-tool-group">
+              <button type="button" class="bp-ai-tool-btn" id="bpAiEmojiBtn" title="Insert Emoji" aria-label="Toggle emoji picker">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              </button>
+              <button type="button" class="bp-ai-tool-btn" id="bpAiMicBtn" title="Voice Input" aria-label="Voice input">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+              </button>
+            </div>
+            <button type="submit" class="bp-ai-send-btn" id="bpAiSendBtn" aria-label="Send Message">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+
+          <div class="bp-ai-emoji-tray" id="bpAiEmojiTray" style="display:none;">
+            <button type="button" class="bp-emoji-pick">👋</button>
+            <button type="button" class="bp-emoji-pick">✨</button>
+            <button type="button" class="bp-emoji-pick">🚀</button>
+            <button type="button" class="bp-emoji-pick">💰</button>
+            <button type="button" class="bp-emoji-pick">📸</button>
+            <button type="button" class="bp-emoji-pick">🔒</button>
+            <button type="button" class="bp-emoji-pick">📅</button>
+            <button type="button" class="bp-emoji-pick">👍</button>
+            <button type="button" class="bp-emoji-pick">🔥</button>
+            <button type="button" class="bp-emoji-pick">💡</button>
+          </div>
+        </div>
+      </form>
+      
+      <div class="bp-ai-brand-badge">
+        <span class="bp-ai-bolt">⚡</span> by Rhyme Tech Systems
+      </div>
+    </div>
+  </div>
+  <button class="bp-ai-trigger" id="bpAiTrigger" type="button" aria-label="Open BoothPoint AI Assistant">
+    <span class="bp-ai-trigger-pulse"></span>
+    <div class="bp-ai-trigger-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+    </div>
+    <span class="bp-ai-trigger-text">Ask AI</span>
+    <span class="bp-ai-trigger-badge">✨</span>
+  </button>
 </div>
 
 <noscript><style>.reveal{ opacity:1 !important; transform:none !important; } .vf-corner{ opacity:1 !important; }</style></noscript>

@@ -1,0 +1,161 @@
+/* boothpoint-calendar-fixes.css */
+/* Fixes for broken calendar layout in boothpoint project */
+
+/* Calendar Grid Fixes */
+.cal-grid-days {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 1px !important;
+  background: var(--border) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+}
+
+.cal-day-label {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  color: var(--muted) !important;
+  text-align: center !important;
+  background: var(--surface-2) !important;
+  padding: 0.5rem 0 !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.cal-cell {
+  aspect-ratio: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  min-height: 44px !important;
+  min-width: 44px !important;
+  position: relative !important;
+}
+
+.cal-cell.has-event {
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface)) !important;
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border)) !important;
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+}
+
+.cal-cell.has-event::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 3px !important;
+  right: 3px !important;
+  width: 6px !important;
+  height: 6px !important;
+  background: var(--accent) !important;
+  border-radius: 50% !important;
+}
+
+.cal-cell.conflict-shield {
+  background: color-mix(in srgb, var(--good) 12%, var(--surface)) !important;
+  border-color: color-mix(in srgb, var(--good) 40%, var(--border)) !important;
+  color: var(--good) !important;
+  font-weight: 700 !important;
+}
+
+/* Calendar Month Header Fixes */
+.cal-month-head {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 1rem !important;
+  padding: 0 0.5rem !important;
+}
+
+.cal-month-head strong {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+}
+
+.cal-month-head span {
+  font-size: 0.7rem !important;
+  color: var(--muted) !important;
+  background: color-mix(in srgb, var(--muted) 12%, transparent) !important;
+  padding: 0.2rem 0.5rem !important;
+  border-radius: 4px !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Calendar Stage Grid */
+.cal-stage-grid {
+  display: grid !important;
+  grid-template-columns: 1.4fr 1fr !important;
+  gap: 1.25rem !important;
+}
+
+.cal-matrix {
+  background: var(--surface-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 10px !important;
+  padding: 1.25rem !important;
+}
+
+/* Responsive Calendar */
+@media (max-width: 800px) {
+  .cal-stage-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .cal-grid-days {
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 0.5px !important;
+  }
+  
+  .cal-cell {
+    min-height: 36px !important;
+    min-width: 36px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .cal-grid-days {
+    grid-template-columns: repeat(7, 1fr) !important;
+  }
+  
+  .cal-cell {
+    min-height: 32px !important;
+    min-width: 32px !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .cal-day-label {
+    font-size: 0.65rem !important;
+    padding: 0.3rem 0 !important;
+  }
+  
+  .cal-month-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+  }
+  
+  .cal-matrix {
+    padding: 1rem !important;
+  }
+}
+
+/* Fix for empty calendar cells */
+.cal-cell:empty {
+  background: var(--surface-2) !important;
+  border-color: var(--border) !important;
+  color: var(--muted) !important;
+}
+
+/* Hover effects for calendar cells */
+.cal-cell:hover:not(:empty) {
+  background: color-mix(in srgb, var(--accent) 5%, var(--surface)) !important;
+  cursor: pointer !important;
+  transform: translateY(-1px) !important;
+  transition: all 0.15s ease !important;
+}
