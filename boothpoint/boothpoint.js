@@ -743,4 +743,44 @@
     };
   }
 
+  // ========== SCREENSHOT LIGHTBOX (click a preview tab image to zoom) ==========
+  var lightbox = document.getElementById('imgLightbox');
+  var lightboxImg = document.getElementById('imgLightboxPic');
+  var lightboxClose = document.getElementById('imgLightboxClose');
+
+  function openLightbox(src, alt) {
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    if (lightboxImg) lightboxImg.src = '';
+  }
+
+  document.querySelectorAll('.tab-shot').forEach(function (img) {
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('role', 'button');
+    img.setAttribute('aria-label', 'Zoom image: ' + (img.alt || ''));
+    img.addEventListener('click', function () { openLightbox(img.src, img.alt); });
+    img.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(img.src, img.alt); }
+    });
+  });
+
+  if (lightbox) {
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
 })();
