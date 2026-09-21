@@ -166,6 +166,7 @@
     'invoices': { url: 'yourstudio.com/invoices/INV-2026-0894', badge: 'Auto-PDF Ready' },
     'tracker': { url: 'yourstudio.com/track/BK-2026-0142', badge: 'Client View' },
     'brand': { url: 'yourstudio.com/admin/brand-engine', badge: 'White-Label' },
+    'activity': { url: 'yourstudio.com/admin/activity-log', badge: 'Business Tier' },
     'ai': { url: 'yourstudio.com/admin/ai-copilot', badge: 'Autonomous Agent' }
   };
 

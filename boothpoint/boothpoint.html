@@ -14,8 +14,46 @@
 
 <div class="grain" aria-hidden="true"></div>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="catFurGrad" cx="35%" cy="28%" r="75%">
+      <stop offset="0%" style="stop-color:#c3c8d1;"/>
+      <stop offset="55%" style="stop-color:#8b93a0;"/>
+      <stop offset="100%" style="stop-color:#5b6270;"/>
+    </radialGradient>
+    <radialGradient id="catEarGrad" cx="40%" cy="25%" r="80%">
+      <stop offset="0%" style="stop-color:#a7aeb9;"/>
+      <stop offset="100%" style="stop-color:#565d6a;"/>
+    </radialGradient>
+    <radialGradient id="catInnerEarGrad" cx="50%" cy="25%" r="80%">
+      <stop offset="0%" style="stop-color:#ffd6e0;"/>
+      <stop offset="100%" style="stop-color:#ff9fb4;"/>
+    </radialGradient>
+  </defs>
+</svg>
+
 <nav class="nav">
-  <a href="#" class="brand">Booth<em>Point</em><span class="by">RTS</span></a>
+  <a href="#" class="brand">
+    <svg class="cat-mascot cat-nav" viewBox="0 0 32 32" aria-hidden="true">
+      <ellipse cx="16" cy="29" rx="8" ry="1.6" fill="rgba(0,0,0,.18)"/>
+      <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+      <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+      <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+      <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+      <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+      <ellipse cx="9.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+      <ellipse cx="22.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+      <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+      <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+      <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+      <path d="M16 21.6 Q14.3 23 12.6 21.7 M16 21.6 Q17.7 23 19.4 21.7" fill="none" stroke="var(--ink)" stroke-width=".7" stroke-linecap="round"/>
+      <g stroke="var(--muted)" stroke-width=".6" stroke-linecap="round" opacity=".7">
+        <line x1="4" y1="18.5" x2="9.5" y2="18.8"/><line x1="4" y1="20.3" x2="9.5" y2="20.3"/>
+        <line x1="28" y1="18.5" x2="22.5" y2="18.8"/><line x1="28" y1="20.3" x2="22.5" y2="20.3"/>
+      </g>
+    </svg>
+    Booth<em>Point</em><span class="by">RTS</span>
+  </a>
   <div class="nav-links">
     <a href="#workflow">Workflow</a>
     <a href="#features">Features</a>
@@ -61,6 +99,267 @@
       <div class="vf-readout mono">
         <span id="vfSetting">f/2.8 &middot; 1/125 &middot; ISO 200</span>
         <span>STUDIO BOOKED</span>
+      </div>
+      <div class="cat-pose-wrap">
+
+        <!-- Pose 1: sitting, tail curled right -->
+        <svg class="cat-mascot cat-posing pose-1" viewBox="0 0 32 44" aria-hidden="true">
+          <ellipse cx="16" cy="41" rx="9" ry="1.8" fill="rgba(0,0,0,.18)"/>
+          <path class="cat-tail" d="M23 33 Q30 30 28.5 21 Q28 17 24 15.5" fill="none" stroke="url(#catFurGrad)" stroke-width="4.2" stroke-linecap="round"/>
+          <ellipse cx="16" cy="32" rx="9" ry="8" fill="url(#catFurGrad)"/>
+          <ellipse cx="11.5" cy="39" rx="2.6" ry="3" fill="url(#catFurGrad)"/>
+          <ellipse cx="20.5" cy="39" rx="2.6" ry="3" fill="url(#catFurGrad)"/>
+          <g class="cat-head-sway">
+            <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+            <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+            <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+            <ellipse cx="9.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <ellipse cx="22.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+            <path d="M16 21.6 Q14.3 23 12.6 21.7 M16 21.6 Q17.7 23 19.4 21.7" fill="none" stroke="var(--ink)" stroke-width=".7" stroke-linecap="round"/>
+            <g stroke="var(--muted)" stroke-width=".6" stroke-linecap="round" opacity=".7">
+              <line x1="4" y1="18.5" x2="9.5" y2="18.8"/><line x1="4" y1="20.3" x2="9.5" y2="20.3"/>
+              <line x1="28" y1="18.5" x2="22.5" y2="18.8"/><line x1="28" y1="20.3" x2="22.5" y2="20.3"/>
+            </g>
+          </g>
+        </svg>
+
+        <!-- Pose 2: paw raised, waving for the camera -->
+        <svg class="cat-mascot cat-posing pose-2" viewBox="0 0 32 44" aria-hidden="true">
+          <ellipse cx="16" cy="41" rx="9" ry="1.8" fill="rgba(0,0,0,.18)"/>
+          <path class="cat-tail" d="M23 35 Q27 34 26 29" fill="none" stroke="url(#catFurGrad)" stroke-width="4.2" stroke-linecap="round"/>
+          <ellipse cx="16" cy="32" rx="9" ry="8" fill="url(#catFurGrad)"/>
+          <ellipse cx="11.5" cy="39" rx="2.6" ry="3" fill="url(#catFurGrad)"/>
+          <ellipse class="cat-paw" cx="22" cy="27" rx="2.3" ry="3.4" transform="rotate(-25 22 27)" fill="url(#catFurGrad)"/>
+          <g class="cat-head-sway">
+            <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+            <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+            <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+            <ellipse cx="9.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <ellipse cx="22.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+            <path d="M16 21.6 Q14.3 23 12.6 21.7 M16 21.6 Q17.7 23 19.4 21.7" fill="none" stroke="var(--ink)" stroke-width=".7" stroke-linecap="round"/>
+            <g stroke="var(--muted)" stroke-width=".6" stroke-linecap="round" opacity=".7">
+              <line x1="4" y1="18.5" x2="9.5" y2="18.8"/><line x1="4" y1="20.3" x2="9.5" y2="20.3"/>
+              <line x1="28" y1="18.5" x2="22.5" y2="18.8"/><line x1="28" y1="20.3" x2="22.5" y2="20.3"/>
+            </g>
+          </g>
+        </svg>
+
+        <!-- Pose 3: playful stretch, tail up high -->
+        <svg class="cat-mascot cat-posing pose-3" viewBox="0 0 32 44" aria-hidden="true">
+          <ellipse cx="16" cy="41" rx="9" ry="1.8" fill="rgba(0,0,0,.18)"/>
+          <path class="cat-tail" d="M25 32 Q33 28 30 17 Q29 12 24 11" fill="none" stroke="url(#catFurGrad)" stroke-width="4.2" stroke-linecap="round"/>
+          <ellipse cx="16" cy="34" rx="11" ry="6" fill="url(#catFurGrad)"/>
+          <ellipse cx="9" cy="40" rx="2.4" ry="2.6" fill="url(#catFurGrad)"/>
+          <ellipse cx="23" cy="40" rx="2.4" ry="2.6" fill="url(#catFurGrad)"/>
+          <g class="cat-head-sway">
+            <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+            <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+            <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+            <ellipse cx="9.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <ellipse cx="22.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+            <path d="M16 21.6 Q14.3 23 12.6 21.7 M16 21.6 Q17.7 23 19.4 21.7" fill="none" stroke="var(--ink)" stroke-width=".7" stroke-linecap="round"/>
+            <g stroke="var(--muted)" stroke-width=".6" stroke-linecap="round" opacity=".7">
+              <line x1="4" y1="18.5" x2="9.5" y2="18.8"/><line x1="4" y1="20.3" x2="9.5" y2="20.3"/>
+              <line x1="28" y1="18.5" x2="22.5" y2="18.8"/><line x1="28" y1="20.3" x2="22.5" y2="20.3"/>
+            </g>
+          </g>
+        </svg>
+
+        <!-- Pose 4: standing alert, tail straight up -->
+        <svg class="cat-mascot cat-posing pose-4" viewBox="0 0 32 44" aria-hidden="true">
+          <ellipse cx="16" cy="41" rx="9" ry="1.8" fill="rgba(0,0,0,.18)"/>
+          <path class="cat-tail" d="M22 30 Q23 20 20 12 Q19 9 22 7" fill="none" stroke="url(#catFurGrad)" stroke-width="4.2" stroke-linecap="round"/>
+          <ellipse cx="16" cy="30" rx="7.5" ry="10" fill="url(#catFurGrad)"/>
+          <ellipse cx="13.5" cy="39" rx="2.3" ry="2.8" fill="url(#catFurGrad)"/>
+          <ellipse cx="18.5" cy="39" rx="2.3" ry="2.8" fill="url(#catFurGrad)"/>
+          <g class="cat-head-sway">
+            <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+            <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+            <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+            <ellipse cx="9.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <ellipse cx="22.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+            <path d="M16 21.6 Q14.3 23 12.6 21.7 M16 21.6 Q17.7 23 19.4 21.7" fill="none" stroke="var(--ink)" stroke-width=".7" stroke-linecap="round"/>
+            <g stroke="var(--muted)" stroke-width=".6" stroke-linecap="round" opacity=".7">
+              <line x1="4" y1="18.5" x2="9.5" y2="18.8"/><line x1="4" y1="20.3" x2="9.5" y2="20.3"/>
+              <line x1="28" y1="18.5" x2="22.5" y2="18.8"/><line x1="28" y1="20.3" x2="22.5" y2="20.3"/>
+            </g>
+          </g>
+        </svg>
+
+        <!-- Pose 5: loaf, tucked paws -->
+        <svg class="cat-mascot cat-posing pose-5" viewBox="0 0 32 44" aria-hidden="true">
+          <ellipse cx="16" cy="41" rx="9" ry="1.8" fill="rgba(0,0,0,.18)"/>
+          <path class="cat-tail" d="M25 38 Q29 37 27 33" fill="none" stroke="url(#catFurGrad)" stroke-width="4.2" stroke-linecap="round"/>
+          <ellipse cx="16" cy="36" rx="11" ry="6" fill="url(#catFurGrad)"/>
+          <g class="cat-head-sway">
+            <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+            <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+            <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+            <ellipse cx="9.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <ellipse cx="22.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+            <path d="M16 21.6 Q14.3 23 12.6 21.7 M16 21.6 Q17.7 23 19.4 21.7" fill="none" stroke="var(--ink)" stroke-width=".7" stroke-linecap="round"/>
+            <g stroke="var(--muted)" stroke-width=".6" stroke-linecap="round" opacity=".7">
+              <line x1="4" y1="18.5" x2="9.5" y2="18.8"/><line x1="4" y1="20.3" x2="9.5" y2="20.3"/>
+              <line x1="28" y1="18.5" x2="22.5" y2="18.8"/><line x1="28" y1="20.3" x2="22.5" y2="20.3"/>
+            </g>
+          </g>
+        </svg>
+
+        <!-- Pose 6: leaping, mid-air -->
+        <svg class="cat-mascot cat-posing pose-6" viewBox="0 0 32 44" aria-hidden="true">
+          <ellipse cx="16" cy="41" rx="9" ry="1.8" fill="rgba(0,0,0,.18)"/>
+          <path class="cat-tail" d="M25 34 Q34 36 33 44" fill="none" stroke="url(#catFurGrad)" stroke-width="4.2" stroke-linecap="round"/>
+          <ellipse cx="17" cy="30" rx="10" ry="7" transform="rotate(-12 17 30)" fill="url(#catFurGrad)"/>
+          <ellipse cx="8" cy="33" rx="2.2" ry="2.8" transform="rotate(-20 8 33)" fill="url(#catFurGrad)"/>
+          <ellipse cx="10" cy="37" rx="2.2" ry="2.8" transform="rotate(-15 10 37)" fill="url(#catFurGrad)"/>
+          <g class="cat-head-sway">
+            <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+            <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+            <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+            <ellipse cx="9.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <ellipse cx="22.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+            <path d="M16 21.6 Q14.3 23 12.6 21.7 M16 21.6 Q17.7 23 19.4 21.7" fill="none" stroke="var(--ink)" stroke-width=".7" stroke-linecap="round"/>
+            <g stroke="var(--muted)" stroke-width=".6" stroke-linecap="round" opacity=".7">
+              <line x1="4" y1="18.5" x2="9.5" y2="18.8"/><line x1="4" y1="20.3" x2="9.5" y2="20.3"/>
+              <line x1="28" y1="18.5" x2="22.5" y2="18.8"/><line x1="28" y1="20.3" x2="22.5" y2="20.3"/>
+            </g>
+          </g>
+        </svg>
+
+        <!-- Pose 7: curious head tilt -->
+        <svg class="cat-mascot cat-posing pose-7" viewBox="0 0 32 44" aria-hidden="true">
+          <ellipse cx="16" cy="41" rx="9" ry="1.8" fill="rgba(0,0,0,.18)"/>
+          <path class="cat-tail" d="M23 33 Q30 30 28.5 21 Q28 17 24 15.5" fill="none" stroke="url(#catFurGrad)" stroke-width="4.2" stroke-linecap="round"/>
+          <ellipse cx="16" cy="32" rx="9" ry="8" fill="url(#catFurGrad)"/>
+          <ellipse cx="11.5" cy="39" rx="2.6" ry="3" fill="url(#catFurGrad)"/>
+          <ellipse cx="20.5" cy="39" rx="2.6" ry="3" fill="url(#catFurGrad)"/>
+          <g class="cat-head-sway cat-head-sway-big">
+            <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+            <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+            <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+            <ellipse cx="9.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <ellipse cx="22.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+            <path d="M16 21.6 Q14.3 23 12.6 21.7 M16 21.6 Q17.7 23 19.4 21.7" fill="none" stroke="var(--ink)" stroke-width=".7" stroke-linecap="round"/>
+            <g stroke="var(--muted)" stroke-width=".6" stroke-linecap="round" opacity=".7">
+              <line x1="4" y1="18.5" x2="9.5" y2="18.8"/><line x1="4" y1="20.3" x2="9.5" y2="20.3"/>
+              <line x1="28" y1="18.5" x2="22.5" y2="18.8"/><line x1="28" y1="20.3" x2="22.5" y2="20.3"/>
+            </g>
+          </g>
+        </svg>
+
+        <!-- Pose 8: playful wink -->
+        <svg class="cat-mascot cat-posing pose-8" viewBox="0 0 32 44" aria-hidden="true">
+          <ellipse cx="16" cy="41" rx="9" ry="1.8" fill="rgba(0,0,0,.18)"/>
+          <path class="cat-tail" d="M23 36 Q26 35 25 31" fill="none" stroke="url(#catFurGrad)" stroke-width="4.2" stroke-linecap="round"/>
+          <ellipse cx="16" cy="32" rx="9" ry="8" fill="url(#catFurGrad)"/>
+          <ellipse cx="11.5" cy="39" rx="2.6" ry="3" fill="url(#catFurGrad)"/>
+          <ellipse cx="20.5" cy="39" rx="2.6" ry="3" fill="url(#catFurGrad)"/>
+          <g class="cat-head-sway">
+            <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+            <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+            <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+            <ellipse cx="9.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <ellipse cx="22.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <path d="M10.3 17 Q12 18.3 13.7 17" fill="none" stroke="var(--ink)" stroke-width=".8" stroke-linecap="round"/>
+            <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+            <path d="M16 21.6 Q14.3 23 12.6 21.7 M16 21.6 Q17.7 23 19.4 21.7" fill="none" stroke="var(--ink)" stroke-width=".7" stroke-linecap="round"/>
+            <g stroke="var(--muted)" stroke-width=".6" stroke-linecap="round" opacity=".7">
+              <line x1="4" y1="18.5" x2="9.5" y2="18.8"/><line x1="4" y1="20.3" x2="9.5" y2="20.3"/>
+              <line x1="28" y1="18.5" x2="22.5" y2="18.8"/><line x1="28" y1="20.3" x2="22.5" y2="20.3"/>
+            </g>
+          </g>
+        </svg>
+
+        <!-- Pose 9: excited play-bow, tail up -->
+        <svg class="cat-mascot cat-posing pose-9" viewBox="0 0 32 44" aria-hidden="true">
+          <ellipse cx="16" cy="41" rx="9" ry="1.8" fill="rgba(0,0,0,.18)"/>
+          <path class="cat-tail" d="M24 32 Q31 26 27 16 Q26 12 22 11" fill="none" stroke="url(#catFurGrad)" stroke-width="4.2" stroke-linecap="round"/>
+          <ellipse cx="16" cy="33" rx="10" ry="7" fill="url(#catFurGrad)"/>
+          <ellipse cx="6" cy="39" rx="2.2" ry="2.4" fill="url(#catFurGrad)"/>
+          <ellipse cx="9" cy="40" rx="2.2" ry="2.4" fill="url(#catFurGrad)"/>
+          <g class="cat-head-sway">
+            <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+            <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+            <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+            <ellipse cx="9.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <ellipse cx="22.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+            <path d="M16 21.6 Q14.3 23 12.6 21.7 M16 21.6 Q17.7 23 19.4 21.7" fill="none" stroke="var(--ink)" stroke-width=".7" stroke-linecap="round"/>
+            <g stroke="var(--muted)" stroke-width=".6" stroke-linecap="round" opacity=".7">
+              <line x1="4" y1="18.5" x2="9.5" y2="18.8"/><line x1="4" y1="20.3" x2="9.5" y2="20.3"/>
+              <line x1="28" y1="18.5" x2="22.5" y2="18.8"/><line x1="28" y1="20.3" x2="22.5" y2="20.3"/>
+            </g>
+          </g>
+        </svg>
+
+        <!-- Pose 10: regal sit, tail wrapped -->
+        <svg class="cat-mascot cat-posing pose-10" viewBox="0 0 32 44" aria-hidden="true">
+          <ellipse cx="16" cy="41" rx="9" ry="1.8" fill="rgba(0,0,0,.18)"/>
+          <path class="cat-tail" d="M11 39 Q6 36 8 30 Q9 27 13 27" fill="none" stroke="url(#catFurGrad)" stroke-width="4.2" stroke-linecap="round"/>
+          <ellipse cx="16" cy="32" rx="8.5" ry="8" fill="url(#catFurGrad)"/>
+          <ellipse cx="14" cy="39" rx="2.2" ry="2.6" fill="url(#catFurGrad)"/>
+          <ellipse cx="18" cy="39" rx="2.2" ry="2.6" fill="url(#catFurGrad)"/>
+          <g class="cat-head-sway">
+            <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+            <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+            <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+            <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+            <ellipse cx="9.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <ellipse cx="22.5" cy="20" rx="2" ry="1.2" fill="#ffb4c6" opacity=".5"/>
+            <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+            <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+            <path d="M16 21.6 Q14.3 23 12.6 21.7 M16 21.6 Q17.7 23 19.4 21.7" fill="none" stroke="var(--ink)" stroke-width=".7" stroke-linecap="round"/>
+            <g stroke="var(--muted)" stroke-width=".6" stroke-linecap="round" opacity=".7">
+              <line x1="4" y1="18.5" x2="9.5" y2="18.8"/><line x1="4" y1="20.3" x2="9.5" y2="20.3"/>
+              <line x1="28" y1="18.5" x2="22.5" y2="18.8"/><line x1="28" y1="20.3" x2="22.5" y2="20.3"/>
+            </g>
+          </g>
+        </svg>
+
       </div>
     </div>
   </div>
@@ -124,39 +423,99 @@
     <div class="feature-grid stagger">
 
       <div class="feature reveal">
+        <svg class="cat-mascot card-peek" viewBox="0 0 32 32" aria-hidden="true">
+          <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+          <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+          <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+          <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+          <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+          <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+          <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+          <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+        </svg>
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h2M14 14h2M8 17h2"/></svg></div>
         <h3>Bookings &amp; Calendar</h3>
         <p>Every inquiry tracked from first message to event day, with separate capacity limits for photographer and photobooth teams so double-bookings never sneak through.</p>
       </div>
 
       <div class="feature reveal">
+        <svg class="cat-mascot card-peek" viewBox="0 0 32 32" aria-hidden="true">
+          <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+          <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+          <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+          <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+          <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+          <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+          <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+          <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+        </svg>
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="13" rx="2"/><path d="M2.5 10h19"/><circle cx="17" cy="14.5" r="1.3" fill="currentColor" stroke="none"/></svg></div>
         <h3>Payments &amp; Paperwork</h3>
         <p>Percentage or fixed deposits, balance-due tracking, and PDF quotations and invoices generated straight from the booking &mdash; no separate invoicing app.</p>
       </div>
 
       <div class="feature reveal">
+        <svg class="cat-mascot card-peek" viewBox="0 0 32 32" aria-hidden="true">
+          <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+          <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+          <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+          <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+          <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+          <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+          <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+          <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+        </svg>
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5 14.5 9.5"/><path d="M11 6.5 12.6 4.9a3.5 3.5 0 0 1 5 5L16 11.5"/><path d="M13 17.5 11.4 19.1a3.5 3.5 0 0 1-5-5L8 12.5"/></svg></div>
         <h3>Public Booking Tracker</h3>
         <p>Clients follow their own status &mdash; inquiry, confirmed, deposit paid, gallery delivered &mdash; through one link you send them. No login, no app to install.</p>
       </div>
 
       <div class="feature reveal">
+        <svg class="cat-mascot card-peek" viewBox="0 0 32 32" aria-hidden="true">
+          <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+          <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+          <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+          <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+          <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+          <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+          <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+          <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+        </svg>
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19.5c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5"/><circle cx="17.5" cy="8.5" r="2.4"/><path d="M15.8 14.3c2.3.3 3.9 2.2 3.9 5.2"/></svg></div>
         <h3>Staff &amp; Equipment</h3>
         <p>Assign photographers and photobooth crews per event, track payouts per team, and keep tabs on gear without a spreadsheet.</p>
       </div>
 
       <div class="feature reveal">
+        <svg class="cat-mascot card-peek" viewBox="0 0 32 32" aria-hidden="true">
+          <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+          <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+          <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+          <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+          <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+          <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+          <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+          <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+        </svg>
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 6.5 9 6.5 9-6.5"/></svg></div>
         <h3>Mail That Doesn't Quit</h3>
         <p>Confirmations and reminders send through your main provider. If it ever fails, BoothPoint switches to a backup provider automatically for 24 hours &mdash; no missed emails.</p>
       </div>
 
       <div class="feature reveal">
+        <svg class="cat-mascot card-peek" viewBox="0 0 32 32" aria-hidden="true">
+          <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+          <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+          <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+          <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+          <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+          <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+          <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+          <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+        </svg>
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.97 0-9-3.4-9-8a8 8 0 0 1 8-8 7 7 0 0 1 7 7c0 1.7-1.3 3-3 3h-1a2 2 0 0 0-1.4 3.4c.5.5.4 1.4-.3 1.7-.3.1-.7.2-1.3.2Z"/><circle cx="7.5" cy="11.5" r="1" fill="currentColor" stroke="none"/><circle cx="11" cy="7.5" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="9" r="1" fill="currentColor" stroke="none"/></svg></div>
         <h3>Make It Yours</h3>
-        <p>Pick your color palette and homepage layout &mdash; Split, Centered, or Full-Bleed Photo &mdash; and write your own About page and FAQ. One codebase, your studio's look.</p>
+        <p>Pick your color palette and homepage layout &mdash; Split, Centered, or Full-Bleed Photo &mdash; set your studio's timezone, and write your own About page and FAQ. One codebase, your studio's look.</p>
       </div>
 
       <div class="feature feature-full reveal">
@@ -184,7 +543,7 @@
     <div class="section-head">
       <p class="tag">Interactive Tour</p>
       <h2>Explore BoothPoint's core interface.</h2>
-      <p>Switch tabs to preview the actual admin dashboard, conflict-free calendar, instant PDF billing, public client tracker, and white-label engine.</p>
+      <p>Every tab below is a real capture from a live install &mdash; Digishots &amp; Photobooth. Your own name, branding, and data replace theirs the day it's yours.</p>
     </div>
 
     <div class="preview-tabs-nav">
@@ -193,6 +552,7 @@
       <button class="tab-btn" data-tab="invoices" type="button">PDF Invoices</button>
       <button class="tab-btn" data-tab="tracker" type="button">Client Tracker</button>
       <button class="tab-btn" data-tab="brand" type="button">Brand Engine</button>
+      <button class="tab-btn" data-tab="activity" type="button">Activity Log</button>
       <!-- Temporarily hidden until AI Studio Copilot features are ready -->
       <button class="tab-btn" data-tab="ai" type="button" style="display:none;"><span style="color:var(--flash);">✨</span> AI Studio Copilot</button>
     </div>
@@ -207,163 +567,26 @@
 
         <!-- Tab 1: Dashboard -->
         <div class="tab-pane active" id="pane-dashboard">
-          <div class="dash-grid">
-            <div class="dash-stat">
-              <div class="dash-stat-lbl">Monthly Bookings</div>
-              <div class="dash-stat-val">28 Events</div>
-              <div class="dash-stat-trend">&#8593; +18% vs last mo</div>
-            </div>
-            <div class="dash-stat">
-              <div class="dash-stat-lbl">Gross Revenue</div>
-              <div class="dash-stat-val">&#8369;142,500</div>
-              <div class="dash-stat-trend">&#8593; 100% retained</div>
-            </div>
-            <div class="dash-stat">
-              <div class="dash-stat-lbl">Pending Balances</div>
-              <div class="dash-stat-val">&#8369;34,000</div>
-              <div class="dash-stat-trend" style="color:#f59e0b;">6 invoices due</div>
-            </div>
-            <div class="dash-stat">
-              <div class="dash-stat-lbl">Active Crew</div>
-              <div class="dash-stat-val">8 Staff</div>
-              <div class="dash-stat-trend">All assigned</div>
-            </div>
-          </div>
-          <div class="dash-main-cols">
-            <div class="dash-chart-card">
-              <div class="dash-card-title">
-                <span>Event Velocity &bull; 2026</span>
-                <span style="font-size:.65rem; color:var(--muted);">Booked vs Completed</span>
-              </div>
-              <div class="chart-bars">
-                <div class="chart-col"><div class="chart-bar-fill" style="height:45%;"></div><span class="chart-bar-lbl">Jun</span></div>
-                <div class="chart-col"><div class="chart-bar-fill" style="height:60%;"></div><span class="chart-bar-lbl">Jul</span></div>
-                <div class="chart-col"><div class="chart-bar-fill" style="height:80%;"></div><span class="chart-bar-lbl">Aug</span></div>
-                <div class="chart-col"><div class="chart-bar-fill" style="height:95%;"></div><span class="chart-bar-lbl">Sep</span></div>
-                <div class="chart-col"><div class="chart-bar-fill" style="height:100%;"></div><span class="chart-bar-lbl">Oct</span></div>
-                <div class="chart-col"><div class="chart-bar-fill" style="height:70%;"></div><span class="chart-bar-lbl">Nov</span></div>
-              </div>
-            </div>
-            <div class="dash-recent-card">
-              <div class="dash-card-title">
-                <span>Recent Studio Feeds</span>
-                <span style="color:var(--good);">&#9679; Realtime</span>
-              </div>
-              <div class="recent-event-item">
-                <div class="event-info"><strong>Reyes Wedding</strong><span>Photobooth + 360 Spin</span></div>
-                <span class="event-badge paid">&#8369;9,000 Paid</span>
-              </div>
-              <div class="recent-event-item">
-                <div class="event-info"><strong>Alvarez Debut</strong><span>Glamour Mirror Booth</span></div>
-                <span class="event-badge pending">Deposit Due</span>
-              </div>
-              <div class="recent-event-item">
-                <div class="event-info"><strong>TechSummit Gala</strong><span>Corporate Strip Station</span></div>
-                <span class="event-badge paid">&#8369;15,500 Paid</span>
-              </div>
-            </div>
-          </div>
+          <p class="tab-shot-label">Real capture &mdash; Digishots &amp; Photobooth admin dashboard</p>
+          <img class="tab-shot" src="images/dashboard.png" alt="Admin dashboard showing total bookings, revenue, collection overview, and booking pipeline, from a live BoothPoint install" loading="lazy">
         </div>
 
         <!-- Tab 2: Calendar -->
         <div class="tab-pane" id="pane-calendar">
-          <div class="cal-stage-grid">
-            <div class="cal-matrix">
-              <div class="cal-month-head">
-                <strong>October 2026 Schedule</strong>
-                <span style="color:var(--muted); font-size:.7rem;">Auto Timezone Sync</span>
-              </div>
-              <div class="cal-grid-days">
-                <div class="cal-day-label">M</div><div class="cal-day-label">T</div><div class="cal-day-label">W</div><div class="cal-day-label">T</div><div class="cal-day-label">F</div><div class="cal-day-label">S</div><div class="cal-day-label">S</div>
-                <div class="cal-cell">1</div><div class="cal-cell">2</div><div class="cal-cell has-event">3</div><div class="cal-cell">4</div><div class="cal-cell">5</div><div class="cal-cell">6</div><div class="cal-cell">7</div>
-                <div class="cal-cell">8</div><div class="cal-cell">9</div><div class="cal-cell has-event">10</div><div class="cal-cell">11</div><div class="cal-cell conflict-shield">12</div><div class="cal-cell">13</div><div class="cal-cell">14</div>
-                <div class="cal-cell">15</div><div class="cal-cell">16</div><div class="cal-cell">17</div><div class="cal-cell has-event">18</div><div class="cal-cell">19</div><div class="cal-cell">20</div><div class="cal-cell">21</div>
-              </div>
-            </div>
-            <div class="cal-event-detail">
-              <div>
-                <div class="cal-shield-banner">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                  <span>Double-Booking Shield Active</span>
-                </div>
-                <h4 style="font-family:'Fraunces',serif; font-size:1.05rem; color:var(--ink); margin-bottom:.3rem;">October 12 &bull; Prime Slot Locked</h4>
-                <p style="font-size:.8rem; color:var(--muted); line-height:1.45;">Booth #1 &amp; #2 committed to Reyes Wedding. System automatically rejects overlapping requests for the same time window.</p>
-              </div>
-              <div style="margin-top:1rem; padding-top:1rem; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
-                <span class="mono" style="font-size:.75rem; color:var(--muted);">Assigned: Mark R. + Bea T.</span>
-                <span class="mock-pill">&#10003; Confirmed</span>
-              </div>
-            </div>
-          </div>
+          <p class="tab-shot-label">Real capture &mdash; Digishots &amp; Photobooth admin calendar</p>
+          <img class="tab-shot" src="images/calendar.png" alt="Monthly booking calendar with color-coded status legend, from a live BoothPoint install" loading="lazy">
         </div>
 
         <!-- Tab 3: Invoicing -->
         <div class="tab-pane" id="pane-invoices">
-          <div class="invoice-mock-box">
-            <div class="inv-top">
-              <div class="inv-brand">
-                <strong>YOUR PHOTOBOOTH STUDIO</strong>
-                <span>Official Statement of Account</span>
-              </div>
-              <div class="inv-meta">
-                <div>INV-2026-0894</div>
-                <div>Date: Oct 12, 2026</div>
-              </div>
-            </div>
-            <table class="inv-items">
-              <thead><tr><th>Item &amp; Description</th><th>Qty</th><th>Amount</th></tr></thead>
-              <tbody>
-                <tr><td>3-Hour Unlimited Magnet Photobooth</td><td>1</td><td>&#8369;8,500.00</td></tr>
-                <tr><td>Custom Acrylic Backdrop &amp; Print Template</td><td>1</td><td>&#8369;2,500.00</td></tr>
-                <tr><td>Live Glam Filter + Instant AirDrop Station</td><td>1</td><td>&#8369;1,500.00</td></tr>
-              </tbody>
-            </table>
-            <div class="inv-totals">
-              <div class="inv-qr-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                <span>GCash / Maya QR Attached</span>
-              </div>
-              <div style="text-align:right;">
-                <div style="font-family:'IBM Plex Mono',monospace; font-size:.75rem; color:var(--muted);">Total: &#8369;12,500.00</div>
-                <div style="font-family:'Fraunces',serif; font-size:1.25rem; font-weight:700; color:var(--good);">&#8369;5,000 Deposit Paid</div>
-              </div>
-            </div>
-          </div>
+          <p class="tab-shot-label">Real capture &mdash; PDF invoice generated straight from a booking</p>
+          <img class="tab-shot" src="images/invoice.png" alt="Invoice page with itemized package, payments received, and balance due, from a live BoothPoint install" loading="lazy">
         </div>
 
         <!-- Tab 4: Tracker -->
         <div class="tab-pane" id="pane-tracker">
-          <div class="tracker-preview-box">
-            <div class="tracker-head">
-              <div class="tracker-title">
-                <h4 style="font-size:1rem; font-family:'Fraunces',serif;">Booking #BK-2026-0142 &bull; Reyes Wedding</h4>
-                <p style="font-size:.72rem; color:var(--muted); font-family:'IBM Plex Mono',monospace;">Public Client Live Tracking Portal &mdash; Zero Login Needed</p>
-              </div>
-              <span class="frame-badge">Client View</span>
-            </div>
-            <div class="tracker-timeline">
-              <div class="tracker-step-row completed">
-                <div class="tracker-step-icon">&#10003;</div>
-                <div class="tracker-step-info"><strong>1. Inquiry &amp; Date Lock</strong><span>Sep 02 &bull; Slot secured with initial details</span></div>
-              </div>
-              <div class="tracker-step-row completed">
-                <div class="tracker-step-icon">&#10003;</div>
-                <div class="tracker-step-info"><strong>2. Deposit Verified</strong><span>Sep 05 &bull; Official e-Receipt issued via GCash</span></div>
-              </div>
-              <div class="tracker-step-row completed">
-                <div class="tracker-step-icon">&#10003;</div>
-                <div class="tracker-step-info"><strong>3. Template Artwork Approved</strong><span>Sep 20 &bull; Customized with couple's monogram</span></div>
-              </div>
-              <div class="tracker-step-row active">
-                <div class="tracker-step-icon">&#9679;</div>
-                <div class="tracker-step-info"><strong>4. Event Day Setup &amp; Shoot</strong><span>Oct 12 &bull; On-site team arriving 2 hrs prior to reception</span></div>
-              </div>
-              <div class="tracker-step-row">
-                <div class="tracker-step-icon">5</div>
-                <div class="tracker-step-info"><strong style="color:var(--muted);">5. Online High-Res Gallery Delivery</strong><span style="color:var(--muted);">Scheduled within 24 hours after event</span></div>
-              </div>
-            </div>
-          </div>
+          <p class="tab-shot-label">Real capture &mdash; the exact page a client sees, no login needed</p>
+          <img class="tab-shot" src="images/tracker.png" alt="Public booking tracker page showing step-by-step booking status, from a live BoothPoint install" loading="lazy">
         </div>
 
         <!-- Tab 5: Brand Engine -->
@@ -389,6 +612,14 @@
               </div>
             </div>
           </div>
+          <p class="tab-shot-label" style="margin-top:1.5rem;">Real capture &mdash; the actual preset palette picker in Settings</p>
+          <img class="tab-shot" src="images/brand-theme.png" alt="Brand theme picker with several real preset color palettes, from a live BoothPoint install" loading="lazy">
+        </div>
+
+        <!-- Tab 6: Activity Log -->
+        <div class="tab-pane" id="pane-activity">
+          <p class="tab-shot-label">Real capture &mdash; who changed what, and when. Business tier</p>
+          <img class="tab-shot" src="images/activity-log.png" alt="Activity log listing changes made in the admin panel with before and after values, from a live BoothPoint install" loading="lazy">
         </div>
 
         <!-- Temporarily hidden until AI Studio Copilot features are ready -->
@@ -566,7 +797,6 @@
           <li>Everything in Starter</li>
           <li>Staff assignment &amp; payout tracking</li>
           <li>Equipment &amp; inventory tracking</li>
-          <li>System activity &amp; audit logs</li>
           <li>Automatic reminder &amp; feedback emails</li>
           <li>Reviews &amp; testimonials module</li>
           <li>Up to 3 admin accounts</li>
@@ -583,6 +813,7 @@
           <li>Google Calendar sync</li>
           <li>Custom hex brand colors</li>
           <li>Unlimited admin accounts</li>
+          <li>Full activity/audit log &mdash; who changed what</li>
           <li>Guided install + onboarding call</li>
           <li>First year of updates included</li>
         </ul>
@@ -620,7 +851,7 @@
           <tr class="group-row"><td colspan="4">Operations &amp; Security</td></tr>
           <tr><td>Staff assignment &amp; payouts</td><td class="no">&mdash;</td><td class="yes">+</td><td class="yes">+</td></tr>
           <tr><td>Equipment &amp; inventory tracking</td><td class="no">&mdash;</td><td class="yes">+</td><td class="yes">+</td></tr>
-          <tr><td>Activity &amp; audit logs</td><td class="no">&mdash;</td><td class="yes">+</td><td class="yes">+</td></tr>
+          <tr><td>Activity &amp; audit logs</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">+</td></tr>
           <tr><td>Admin accounts</td><td>1</td><td>Up to 3</td><td>Unlimited</td></tr>
 
           <tr class="group-row"><td colspan="4">Client communication</td></tr>
@@ -675,6 +906,20 @@
     </div>
 
     <div class="testimonials-grid stagger">
+      <div class="test-card reveal">
+        <div>
+          <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="test-quote">&ldquo;Kami ang unang studio na gumamit ng BoothPoint, kaya nasubukan na namin ito mula pa sa una. Sobrang laking tulong lumipat mula Google Sheets papuntang isang system &mdash; from inquiry hanggang gallery delivery, andun na lahat.&rdquo;</p>
+        </div>
+        <div class="test-author">
+          <div class="test-avatar">GP</div>
+          <div class="test-meta">
+            <strong>Giorgette &amp; Patricia</strong>
+            <span>Owners, Digishots &amp; Photobooth &bull; Plaridel, Bulacan</span>
+          </div>
+        </div>
+      </div>
+
       <div class="test-card reveal">
         <div>
           <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -825,7 +1070,19 @@
 
 <footer>
   <div class="foot-inner">
-    <div><strong>BoothPoint</strong> &mdash; booking &amp; studio management software</div>
+    <div style="display:flex; align-items:center; gap:.6rem;">
+      <svg class="cat-mascot cat-footer" viewBox="0 0 32 32" aria-hidden="true">
+        <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+        <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+        <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+        <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+        <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+        <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+        <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+        <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+      </svg>
+      <div><strong>BoothPoint</strong> &mdash; booking &amp; studio management software</div>
+    </div>
     <div class="mono" style="display:inline;"><span>RHYME TECH SYSTEMS</span> <span style="font-size:.7rem; color:var(--muted);">&copy; 2026</span></div>
   </div>
 </footer>
@@ -994,11 +1251,107 @@
   <button class="bp-ai-trigger" id="bpAiTrigger" type="button" aria-label="Open BoothPoint AI Assistant">
     <span class="bp-ai-trigger-pulse"></span>
     <div class="bp-ai-trigger-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+      <svg class="cat-mascot cat-ai" viewBox="0 0 32 32" aria-hidden="true">
+        <path class="cat-ear cat-ear-l" d="M7 12 L10 3 L14 10 Z" fill="url(#catEarGrad)"/>
+        <path class="cat-ear cat-ear-r" d="M25 12 L22 3 L18 10 Z" fill="url(#catEarGrad)"/>
+        <path d="M9 11 L10.6 5.5 L13 10.3 Z" fill="url(#catInnerEarGrad)"/>
+        <path d="M23 11 L21.4 5.5 L19 10.3 Z" fill="url(#catInnerEarGrad)"/>
+        <circle cx="16" cy="18" r="10" fill="url(#catFurGrad)"/>
+        <g class="cat-eye cat-eye-l"><ellipse cx="12" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="12" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="11.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+        <g class="cat-eye cat-eye-r"><ellipse cx="20" cy="17" rx="1.7" ry="2.3" fill="var(--flash)"/><ellipse cx="20" cy="17" rx=".4" ry="1.7" fill="var(--ink)"/><circle cx="19.4" cy="15.9" r=".55" fill="#fff" opacity=".85"/></g>
+        <path d="M15 20.3 L17 20.3 L16 21.6 Z" fill="#ff8fa3"/>
+        <path d="M16 21.6 Q14.3 23 12.6 21.7 M16 21.6 Q17.7 23 19.4 21.7" fill="none" stroke="var(--ink)" stroke-width=".7" stroke-linecap="round"/>
+        <path class="cat-paw" d="M22 23 q3 -1.2 4.2 1.8 q.5 1.8 -1.3 2.6 q-2.8 1.1 -4.3 -1.3 q-1 -1.9 1.4 -3.1 Z" fill="url(#catFurGrad)"/>
+      </svg>
     </div>
     <span class="bp-ai-trigger-text">Ask AI</span>
     <span class="bp-ai-trigger-badge">✨</span>
   </button>
+</div>
+
+<div class="cat-companion" aria-hidden="true">
+  <div class="cat-companion-stage">
+
+    <!-- Walking state: side profile, front + back leg alternate like a real trot -->
+    <svg class="cat-mascot cat-companion-svg state-walk" viewBox="0 0 64 46">
+      <ellipse cx="34" cy="43" rx="20" ry="2" fill="rgba(0,0,0,.18)"/>
+      <line class="cat-leg cat-leg-back" x1="20" y1="30" x2="20" y2="41" stroke="url(#catFurGrad)" stroke-width="3.6" stroke-linecap="round"/>
+      <line class="cat-leg cat-leg-front" x1="42" y1="30" x2="42" y2="41" stroke="url(#catFurGrad)" stroke-width="3.6" stroke-linecap="round"/>
+      <path class="cat-tail" d="M14 26 Q4 22 6 12 Q7 7 13 6" fill="none" stroke="url(#catFurGrad)" stroke-width="4" stroke-linecap="round"/>
+      <ellipse cx="30" cy="25" rx="18" ry="10" fill="url(#catFurGrad)"/>
+      <g class="cat-look">
+        <path d="M43 10 L41 3 L46 8 Z" fill="url(#catEarGrad)" opacity=".85"/>
+        <path class="cat-ear" d="M50 9 L52 2 L55 8 Z" fill="url(#catEarGrad)"/>
+        <path d="M51 8 L52.3 4 L54 7.4 Z" fill="url(#catInnerEarGrad)"/>
+        <circle cx="49" cy="16" r="8.5" fill="url(#catFurGrad)"/>
+        <g class="cat-eye"><ellipse cx="51.5" cy="15" rx="2" ry="2.5" fill="var(--flash)"/><ellipse cx="51.5" cy="15" rx=".45" ry="1.9" fill="var(--ink)"/><circle cx="50.8" cy="13.7" r=".6" fill="#fff" opacity=".85"/></g>
+        <path d="M57 16.5 L59.5 17.3 L57.3 18.6 Z" fill="#ff8fa3"/>
+        <path d="M57.3 18.6 Q55.5 20 53.5 18.8" fill="none" stroke="var(--ink)" stroke-width=".65" stroke-linecap="round"/>
+        <g stroke="var(--muted)" stroke-width=".55" stroke-linecap="round" opacity=".7">
+          <line x1="60" y1="15.5" x2="54" y2="15"/><line x1="60" y1="17" x2="54" y2="17.2"/>
+        </g>
+      </g>
+    </svg>
+
+    <!-- Sitting state: settles, then grooms (front paw wipes the face) -->
+    <svg class="cat-mascot cat-companion-svg state-sit" viewBox="0 0 64 46">
+      <ellipse cx="30" cy="43" rx="16" ry="2" fill="rgba(0,0,0,.18)"/>
+      <path class="cat-tail" d="M16 36 Q6 34 8 24 Q9 19 15 18" fill="none" stroke="url(#catFurGrad)" stroke-width="4" stroke-linecap="round"/>
+      <ellipse cx="30" cy="30" rx="15" ry="14" fill="url(#catFurGrad)"/>
+      <ellipse class="groom-paw" cx="40" cy="41" rx="3.2" ry="3.6" fill="url(#catFurGrad)"/>
+      <g class="cat-look">
+        <path d="M36 9 L34 2 L39 7 Z" fill="url(#catEarGrad)" opacity=".85"/>
+        <path class="cat-ear" d="M43 8 L45 1 L48 7 Z" fill="url(#catEarGrad)"/>
+        <path d="M44 7 L45.3 3 L47 6.4 Z" fill="url(#catInnerEarGrad)"/>
+        <circle cx="42" cy="15" r="8.5" fill="url(#catFurGrad)"/>
+        <g class="cat-eye"><ellipse cx="44.5" cy="14" rx="2" ry="2.5" fill="var(--flash)"/><ellipse cx="44.5" cy="14" rx=".45" ry="1.9" fill="var(--ink)"/><circle cx="43.8" cy="12.7" r=".6" fill="#fff" opacity=".85"/></g>
+        <path d="M50 15.5 L52.5 16.3 L50.3 17.6 Z" fill="#ff8fa3"/>
+        <path d="M50.3 17.6 Q48.5 19 46.5 17.8" fill="none" stroke="var(--ink)" stroke-width=".65" stroke-linecap="round"/>
+        <g stroke="var(--muted)" stroke-width=".55" stroke-linecap="round" opacity=".7">
+          <line x1="53" y1="14.5" x2="47" y2="14"/><line x1="53" y1="16" x2="47" y2="16.2"/>
+        </g>
+      </g>
+    </svg>
+
+    <!-- Chase state: spots a mouse, crouches low, sprints, leaps -->
+    <svg class="cat-mascot cat-companion-svg state-chase" viewBox="0 0 64 46">
+      <g class="chase-motion-lines" stroke="var(--muted)" stroke-width="1.4" stroke-linecap="round" opacity=".4">
+        <line x1="0" y1="20" x2="10" y2="20"/>
+        <line x1="0" y1="27" x2="9" y2="27"/>
+        <line x1="0" y1="34" x2="10" y2="34"/>
+      </g>
+      <ellipse cx="34" cy="43" rx="21" ry="2" fill="rgba(0,0,0,.18)"/>
+      <line class="cat-leg cat-leg-chase-back" x1="18" y1="32" x2="18" y2="41" stroke="url(#catFurGrad)" stroke-width="3.6" stroke-linecap="round"/>
+      <line class="cat-leg cat-leg-chase-front" x1="44" y1="32" x2="44" y2="41" stroke="url(#catFurGrad)" stroke-width="3.6" stroke-linecap="round"/>
+      <path class="cat-tail" d="M12 30 Q2 32 4 24 Q5 20 11 19" fill="none" stroke="url(#catFurGrad)" stroke-width="4" stroke-linecap="round"/>
+      <ellipse cx="30" cy="30" rx="19" ry="8" fill="url(#catFurGrad)"/>
+      <path d="M42 14 L40 8 L45 12 Z" fill="url(#catEarGrad)" opacity=".85"/>
+      <path d="M49 13 L51 7 L54 12 Z" fill="url(#catEarGrad)"/>
+      <circle cx="48" cy="19" r="7.5" fill="url(#catFurGrad)"/>
+      <g><ellipse cx="50.5" cy="18" rx="2.3" ry="2.8" fill="var(--flash)"/><ellipse cx="50.5" cy="18" rx=".45" ry="2.2" fill="var(--ink)"/><circle cx="49.8" cy="16.7" r=".6" fill="#fff" opacity=".85"/></g>
+      <path d="M56 19 L58.3 19.8 L56.2 21 Z" fill="#ff8fa3"/>
+    </svg>
+
+  </div>
+</div>
+
+<div class="cat-mouse" aria-hidden="true">
+  <div class="cat-mouse-jiggle">
+    <svg viewBox="0 0 20 15" width="100%" height="100%">
+      <path d="M3 9 Q-3 12 -1 15" fill="none" stroke="var(--muted)" stroke-width="1" stroke-linecap="round"/>
+      <ellipse cx="10" cy="8.5" rx="7" ry="4.6" fill="var(--muted)"/>
+      <circle cx="6" cy="4.2" r="1.8" fill="var(--muted)"/>
+      <circle cx="9.5" cy="3.4" r="1.6" fill="var(--muted)"/>
+      <circle cx="13.5" cy="7.5" r=".6" fill="var(--ink)"/>
+      <circle cx="16.6" cy="8.8" r=".7" fill="#ff8fa3"/>
+    </svg>
+  </div>
+</div>
+
+<div class="cat-mouse-hole" aria-hidden="true">
+  <svg viewBox="0 0 20 12" width="100%" height="100%">
+    <ellipse cx="10" cy="8" rx="9" ry="4" fill="var(--ink)" opacity=".55"/>
+  </svg>
 </div>
 
 <noscript><style>.reveal{ opacity:1 !important; transform:none !important; } .vf-corner{ opacity:1 !important; }</style></noscript>
