@@ -11,6 +11,8 @@ const p_pdash = require('./css_parts/part_preview_dash_cal.js');
 const p_ptrack = require('./css_parts/part_invoicing_tracker.js');
 const p_pbrand = require('./css_parts/part_brand_ai_tab.js');
 const p_trust = require('./css_parts/part_trust_calc.js');
+const p_sec = require('./css_parts/part_security.js');
+const p_cat = require('./css_parts/part_cat_mascot.js');
 const p_price = require('./css_parts/part_pricing_compare.js');
 const p_test = require('./css_parts/part_testimonials_faq.js');
 const p_cta = require('./css_parts/part_cta_footer_fab.js');
@@ -21,7 +23,8 @@ const p_resp = require('./css_parts/part_responsive_queries.js');
 
 const fullCss = [
   p1, p2, p3, p_wf, p_pnav, p_pdash, p_ptrack, p_pbrand,
-  p_trust, p_price, p_test, p_cta, p_ai_dock, p_ai_chat, p_ai_inp, p_resp
+  p_trust, p_sec, p_price, p_test, p_cta, p_ai_dock, p_ai_chat, p_ai_inp,
+  p_cat, p_resp
 ].join('\n\n');
 
 fs.writeFileSync(path.join(__dirname, 'boothpoint.css'), fullCss, 'utf8');
