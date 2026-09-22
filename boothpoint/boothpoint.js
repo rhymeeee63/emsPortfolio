@@ -159,6 +159,20 @@
   var tabPanes = document.querySelectorAll('.tab-pane');
   var stageUrl = document.getElementById('stageUrl');
   var stageBadge = document.getElementById('stageBadge');
+  var tabsNav = document.querySelector('.preview-tabs-nav');
+
+  // One-time nudge so the row's horizontal scrollability is obvious on
+  // first load, since the scrollbar itself is hidden — without this it
+  // just looks like the last tab is cut off rather than scrollable.
+  if (tabsNav && tabsNav.scrollWidth > tabsNav.clientWidth
+      && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    setTimeout(function () {
+      tabsNav.scrollTo({ left: 46, behavior: 'smooth' });
+      setTimeout(function () {
+        tabsNav.scrollTo({ left: 0, behavior: 'smooth' });
+      }, 550);
+    }, 700);
+  }
 
   var tabMeta = {
     'dashboard': { url: 'yourstudio.com/admin/dashboard', badge: 'Live Sync • v2.4' },
@@ -166,6 +180,9 @@
     'invoices': { url: 'yourstudio.com/invoices/INV-2026-0894', badge: 'Auto-PDF Ready' },
     'tracker': { url: 'yourstudio.com/track/BK-2026-0142', badge: 'Client View' },
     'brand': { url: 'yourstudio.com/admin/brand-engine', badge: 'White-Label' },
+    'activity': { url: 'yourstudio.com/admin/activity-log', badge: 'Full Audit Trail' },
+    'contract': { url: 'yourstudio.com/booking-details?id=78', badge: 'E-Signed' },
+    'twofa': { url: 'yourstudio.com/admin/users', badge: 'Optional Per Account' },
     'ai': { url: 'yourstudio.com/admin/ai-copilot', badge: 'Autonomous Agent' }
   };
 
@@ -213,6 +230,20 @@
   var savingsTotal = document.getElementById('calcSavingsTotal');
   var calcSaasCost = document.getElementById('calcSaasCost');
   var calcBpCost = document.getElementById('calcBpCost');
+  var calcSavingsFx = document.getElementById('calcSavingsFx');
+  var calcBpCostFx = document.getElementById('calcBpCostFx');
+  var calcSaasCostFx = document.getElementById('calcSaasCostFx');
+
+  function setFxNote(el, php) {
+    if (!el) return;
+    var fx = window.bpFx;
+    if (!fx || !fx.code || !fx.fmt || !php) {
+      el.hidden = true;
+      return;
+    }
+    el.textContent = '≈ ' + fx.fmt.format(php / fx.rate);
+    el.hidden = false;
+  }
 
   function updateRoi() {
     if (!bookingRange || !priceRange || !yearsRange) return;
@@ -232,11 +263,23 @@
     var bpCost = 13000; // Professional one-time tier
 
     var netSavings = Math.max(0, saasFees - bpCost);
+    var roundedSavings = Math.round(netSavings);
+    var roundedSaas = Math.round(saasFees);
 
-    if (savingsTotal) savingsTotal.textContent = '₱' + Math.round(netSavings).toLocaleString();
-    if (calcSaasCost) calcSaasCost.textContent = '₱' + Math.round(saasFees).toLocaleString() + '+';
+    if (savingsTotal) savingsTotal.textContent = '₱' + roundedSavings.toLocaleString();
+    if (calcSaasCost) calcSaasCost.textContent = '₱' + roundedSaas.toLocaleString() + '+';
     if (calcBpCost) calcBpCost.textContent = '₱13,000 once';
+
+    setFxNote(calcSavingsFx, roundedSavings);
+    setFxNote(calcBpCostFx, bpCost);
+    setFxNote(calcSaasCostFx, roundedSaas);
   }
+
+  // The currency-reference module (further down this file) calls this
+  // once it knows the visitor's currency, so the calculator's
+  // already-rendered numbers get their approximate conversion too
+  // instead of only the static pricing cards.
+  window.bpUpdateRoi = updateRoi;
 
   if (bookingRange && priceRange && yearsRange) {
     bookingRange.addEventListener('input', updateRoi);
@@ -809,6 +852,13 @@
       el.textContent = '≈ ' + fmt.format(php / RATES[code]);
       el.hidden = false;
     });
+
+    // Shared with the ROI calculator (see part_tabs_calc_faq above),
+    // whose numbers are computed live from slider input rather than
+    // fixed data-price attributes, so it converts itself on every
+    // recompute instead of a one-time scan.
+    window.bpFx = { code: code, rate: RATES[code], fmt: fmt };
+    if (typeof window.bpUpdateRoi === 'function') window.bpUpdateRoi();
   }
 
   function applyByCountry(countryCode) {

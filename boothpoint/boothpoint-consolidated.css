@@ -758,7 +758,7 @@ section {
 /* ========== FEATURES BENTO GRID ========== */
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
 }
 
@@ -855,6 +855,10 @@ section {
   margin-bottom: 1.8rem;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  /* Fades the trailing edge instead of a hard clip, so an off-screen
+     tab reads as "more here, keep scrolling" rather than cut off. */
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - 36px), transparent 100%);
+  mask-image: linear-gradient(to right, black calc(100% - 36px), transparent 100%);
 }
 
 .preview-tabs-nav::-webkit-scrollbar {
@@ -862,6 +866,7 @@ section {
 }
 
 .tab-btn {
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
@@ -1871,6 +1876,17 @@ section {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 600;
   color: var(--ink);
+}
+
+.calc-breakdown-val {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+}
+
+.calc-savings-number + .fx-note {
+  margin-bottom: 0.4rem;
 }
 
 
