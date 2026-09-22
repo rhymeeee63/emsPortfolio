@@ -742,4 +742,110 @@
     };
   }
 
+// ========== SCREENSHOT LIGHTBOX (click a preview tab image to zoom) ==========
+(function () {
+  var lightbox = document.getElementById('imgLightbox');
+  var lightboxImg = document.getElementById('imgLightboxPic');
+  var lightboxClose = document.getElementById('imgLightboxClose');
+
+  function openLightbox(src, alt) {
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    if (lightboxImg) lightboxImg.src = '';
+  }
+
+  document.querySelectorAll('.tab-shot').forEach(function (img) {
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('role', 'button');
+    img.setAttribute('aria-label', 'Zoom image: ' + (img.alt || ''));
+    img.addEventListener('click', function () { openLightbox(img.src, img.alt); });
+    img.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(img.src, img.alt); }
+    });
+  });
+
+  if (lightbox) {
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+
+// ========== CURRENCY REFERENCE (approximate, PHP stays the billed currency) ==========
+(function () {
+  var RATES = { // PHP per 1 unit of currency, approximate
+    USD: 58, EUR: 62, GBP: 73, AUD: 37, CAD: 41, SGD: 43,
+    AED: 15.8, INR: 0.70, JPY: 0.39, HKD: 7.4, NZD: 34, CNY: 8.0
+  };
+  var COUNTRY_CURRENCY = {
+    US: 'USD', GB: 'GBP', CA: 'CAD', AU: 'AUD', SG: 'SGD', AE: 'AED',
+    IN: 'INR', JP: 'JPY', HK: 'HKD', NZ: 'NZD', CN: 'CNY',
+    DE: 'EUR', FR: 'EUR', ES: 'EUR', IT: 'EUR', NL: 'EUR', IE: 'EUR',
+    PT: 'EUR', AT: 'EUR', BE: 'EUR', FI: 'EUR', GR: 'EUR'
+  };
+
+  function applyCurrency(code) {
+    if (!code || code === 'PHP' || !RATES[code]) return;
+    var fmt;
+    try {
+      fmt = new Intl.NumberFormat('en-US', { style: 'currency', currency: code, maximumFractionDigits: 0 });
+    } catch (e) { return; }
+    document.querySelectorAll('.fx-note[data-price]').forEach(function (el) {
+      var php = parseFloat(el.getAttribute('data-price'));
+      if (!php) return;
+      el.textContent = '≈ ' + fmt.format(php / RATES[code]);
+      el.hidden = false;
+    });
+  }
+
+  function applyByCountry(countryCode) {
+    if (!countryCode) return false;
+    var currency = COUNTRY_CURRENCY[countryCode.toUpperCase()];
+    if (!currency) return false;
+    applyCurrency(currency);
+    return true;
+  }
+
+  function fallbackByLocale() {
+    try {
+      var region = (navigator.language || '').split('-')[1];
+      applyByCountry(region);
+    } catch (e) {}
+  }
+
+  if ('fetch' in window) {
+    var controller = ('AbortController' in window) ? new AbortController() : null;
+    var timeout = setTimeout(function () { if (controller) controller.abort(); }, 3000);
+    // ipwho.is returns country_code (e.g. "US"), not a currency field --
+    // map it through COUNTRY_CURRENCY ourselves.
+    fetch('https://ipwho.is/', controller ? { signal: controller.signal } : {})
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        clearTimeout(timeout);
+        if (!data || !data.success || !applyByCountry(data.country_code)) {
+          fallbackByLocale();
+        }
+      })
+      .catch(function () {
+        clearTimeout(timeout);
+        fallbackByLocale();
+      });
+  } else {
+    fallbackByLocale();
+  }
+})();
+
 })();
